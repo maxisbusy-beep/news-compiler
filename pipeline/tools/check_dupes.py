@@ -26,7 +26,17 @@ def main() -> int:
         print(f"vs previous run: {len(new)} new items, {len(dropped)} dropped (expired)")
         for i in new[:10]:
             print("   new:", i["outlet_id"], "|", i["title"][:90])
-    print(f"duplicates: {len(dups)}")
+    health_path = data / "health.json"
+    if health_path.exists():
+        health = json.loads(health_path.read_text(encoding="utf-8"))["feeds"]
+        by_outlet: dict[str, Counter] = {}
+        for h in health:
+            by_outlet.setdefault(h["outlet_id"], Counter())[h["status"]] += 1
+        print("\nFEED HEALTH (outlet: items in 48h window | feed statuses this run)")
+        for oid in sorted(by_outlet):
+            st = ", ".join(f"{k}={v}" for k, v in sorted(by_outlet[oid].items()))
+            print(f"  {oid:16} {per_outlet.get(oid, 0):4} | {st}")
+    print(f"\nduplicates: {len(dups)}")
     for d in dups[:20]:
         print("   ", d)
     return 1 if dups else 0
