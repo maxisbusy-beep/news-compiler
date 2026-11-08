@@ -37,7 +37,9 @@ GitHub Pages (vanilla HTML/CSS/JS, no build step, PWA)
   feed -> story detail -> outlet article (new tab)
 ```
 
-**Publishing:** deploy via `actions/upload-pages-artifact` + `actions/deploy-pages`. Don't commit data to the repo every run; that bloats git history. Each run starts by downloading the live `data/state.json` and `data/stories.json` from the Pages URL to carry state forward. If that fails, the run starts fresh.
+**Publishing:** deploy via `actions/upload-pages-artifact` + `actions/deploy-pages`. Don't commit data to the repo every run; that bloats git history.
+
+**Carrying state between runs:** private working data (`raw.json` with RSS descriptions, `state.json` with ETags and centroids) lives in the Actions cache (`actions/cache/restore` + `save`, key `pipeline-work-<run_id>`, restore prefix `pipeline-work-`). It is never committed or published, because RSS descriptions are other outlets' text. Only `stories.json` and `health.json` go to Pages. If the cache is missing, the run starts fresh. (Changed in Phase 3 from downloading state off Pages.)
 
 **Caching:** cache the embedding model, the GGUF model, the Argos language packs and pip packages with `actions/cache`.
 
