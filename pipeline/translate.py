@@ -21,6 +21,9 @@ MODELS_DIR = Path(os.environ.get("NC_MODELS_DIR", Path.home() / ".cache" / "news
 
 TranslateFn = Callable[[str, list[str]], list[str]]  # (lang, titles) -> english titles
 
+# Bump when translation output changes, so stored translations are redone.
+TRANSLATION_VERSION = 2
+
 
 def package_dir(lang: str) -> Path:
     return MODELS_DIR / "argos" / f"{lang}_en"
@@ -83,7 +86,10 @@ class ArgosTranslator:
         results = self.model.translate_batch(
             tokens, beam_size=2, max_batch_size=64, replace_unknowns=True, max_decoding_length=96
         )
-        return [self.sp.decode(r.hypotheses[0]).strip() for r in results]
+        # Join pieces ourselves (as Argos does): some packages' output pieces
+        # are not all in the source sentencepiece vocabulary, so sp.decode
+        # would leave the "▁" word markers in the text.
+        return [" ".join("".join(r.hypotheses[0]).replace("▁", " ").split()) for r in results]
 
 
 _translators: dict[str, ArgosTranslator] = {}
@@ -104,11 +110,11 @@ def translate_items(items: list[dict], translate: TranslateFn = argos_translate)
     stats = {"translated": 0, "already": 0, "failed_langs": []}
     todo: dict[str, list[dict]] = {}
     for it in items:
-        if it.get("title_en"):
-            stats["already"] += 1
-            continue
         if it.get("language", "en") == "en":
             it["title_en"] = it["title"]
+            continue
+        if it.get("title_en") and it.get("tv") == TRANSLATION_VERSION:
+            stats["already"] += 1
             continue
         todo.setdefault(it["language"], []).append(it)
     for lang, group in todo.items():
@@ -119,6 +125,7 @@ def translate_items(items: list[dict], translate: TranslateFn = argos_translate)
             continue  # leave title_en unset so the next run retries
         for it, en in zip(group, out):
             it["title_en"] = en or it["title"]
+            it["tv"] = TRANSLATION_VERSION
             stats["translated"] += 1
     return stats
 

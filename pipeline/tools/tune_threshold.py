@@ -59,7 +59,13 @@ def main():
         print(f"  {t:.3f}     {m['precision']:.3f}    {m['recall']:.3f}  {m['f1']:.3f}  {m['ari']:.3f}")
         if best is None or m["f1"] > best["f1"]:
             best = m
-    print(f"\nbest: {best}")
+    print(f"\nbest F1: {best}")
+    # Policy: a wrong merge misleads more than a split, so prefer the loosest
+    # threshold that keeps pairwise precision >= 0.97.
+    safe = [evaluate(vectors, truth, float(t))[0] for t in np.round(np.arange(0.20, 0.71, 0.025), 3)]
+    safe = [m for m in safe if m["precision"] >= 0.97]
+    if safe:
+        print(f"recommended (loosest with precision >= 0.97): {safe[-1]}")
     m, pred = evaluate(vectors, truth, group.GROUP_THRESHOLD)
     print(f"current GROUP_THRESHOLD {group.GROUP_THRESHOLD}: {m}")
     clusters = {}

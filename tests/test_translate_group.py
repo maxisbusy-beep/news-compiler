@@ -21,13 +21,16 @@ def item(i, outlet, title, lang="en", first_seen="2026-11-08T10:00:00Z"):
 # --- translation -------------------------------------------------------------
 
 def test_translate_keeps_original_and_skips_done_items():
-    items = [item(1, "a", "Hallo Welt", "de"), item(2, "b", "Hello"), item(3, "c", "Bonjour", "fr")]
-    items[2]["title_en"] = "Hello (already)"
+    items = [item(1, "a", "Hallo Welt", "de"), item(2, "b", "Hello"), item(3, "c", "Bonjour", "fr"),
+             item(4, "d", "Salut", "fr")]
+    items[2].update(title_en="Hello (already)", tv=translate.TRANSLATION_VERSION)
+    items[3].update(title_en="▁old▁output", tv=1)  # older translation version: redone
     stats = translate.translate_items(items, fake_translate)
     assert items[0]["title"] == "Hallo Welt" and items[0]["title_en"] == "[de] Hallo Welt"
     assert items[1]["title_en"] == "Hello"
     assert items[2]["title_en"] == "Hello (already)"
-    assert stats["translated"] == 1 and stats["already"] == 1
+    assert items[3]["title_en"] == "[fr] Salut"
+    assert stats["translated"] == 2 and stats["already"] == 1
 
 
 def test_translate_failure_is_not_fatal_and_retried_later():
@@ -129,6 +132,7 @@ def test_argos_translates_fixture_languages():
     out_fr = translate.argos_translate("fr", ["Le gouvernement survit à une motion de censure"])
     assert "earthquake" in out_de[0].lower() or "quake" in out_de[0].lower()
     assert "government" in out_fr[0].lower()
+    assert "▁" not in out_de[0] + out_fr[0]
 
 
 @requires_models
