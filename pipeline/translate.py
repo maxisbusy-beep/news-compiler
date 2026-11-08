@@ -38,15 +38,17 @@ def ensure_package(lang: str) -> Path:
         raise RuntimeError(f"no Argos package for {lang}->en")
     pkg = max(pkgs, key=lambda p: [int(x) for x in p["package_version"].split(".")])
     data = None
+    errors = []
     for link in pkg["links"]:
         try:
-            with urllib.request.urlopen(link, timeout=120) as r:
+            req = urllib.request.Request(link, headers={"User-Agent": "argos-translate/1.9 (news-compiler)"})
+            with urllib.request.urlopen(req, timeout=180) as r:
                 data = r.read()
             break
-        except OSError:
-            continue
+        except OSError as exc:
+            errors.append(f"{link}: {exc}")
     if data is None:
-        raise RuntimeError(f"could not download Argos package {lang}->en")
+        raise RuntimeError(f"could not download Argos package {lang}->en: {errors}")
     dest.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(io.BytesIO(data)) as z:
         for member in z.infolist():
