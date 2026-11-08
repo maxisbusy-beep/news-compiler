@@ -63,7 +63,9 @@ Return JSON with:
 - "headline": one neutral, factual headline for that main event.
   * At most 90 characters, plain present tense.
   * Only facts reported by at least two items. Use a number only if at least two items give the same number.
-  * Attribute disputed claims to whoever made them ("X says ...").
+  * Attribute disputed claims to whoever made them ("X says ..."). If the items say "police say", "officials say" or "Houthis say", keep that attribution.
+  * Be specific: say who did what, and where. Not "Russia targets Ukraine with airstrikes" but what was hit and the result.
+  * Name a place only if at least two items name it.
   * Name the main people, places or organizations involved.
   * No news outlet names. No opinion or emotional words (such as slams, chaos, radical, shocking, disaster, regime).
 - "summary": 2 or 3 short sentences of facts that at least two items agree on. Same rules as the headline.
@@ -231,6 +233,19 @@ def generate(story_items: list[dict], outlets: dict, llm: LlmFn,
 
 # --- all stories ---------------------------------------------------------------
 
+def blindspot(counts: dict) -> str | None:
+    """SPEC: >= 5 outlets; left share of partisan outlets >= 0.85 -> the right is
+    ignoring it ("right"); <= 0.15 -> "left". Center outlets are not counted."""
+    if sum(counts.values()) < 5:
+        return None
+    left = counts.get("left", 0) + counts.get("lean_left", 0)
+    right = counts.get("right", 0) + counts.get("lean_right", 0)
+    if left + right == 0:
+        return None
+    share = left / (left + right)
+    return "right" if share >= 0.85 else "left" if share <= 0.15 else None
+
+
 def lean_counts(story_items: list[dict], outlets: dict) -> dict:
     c = Counter()
     for oid in {it["outlet_id"] for it in story_items}:
@@ -314,8 +329,8 @@ def write_all(stories: list[dict], items: list[dict], outlets_list: list[dict], 
             "region": entry.get("region") or majority_region(its, outlets),
             "first_seen": s["first_seen"],
             "updated": s["updated"],
-            "counts": lean_counts(its, outlets),
-            "blindspot": None,
+            "counts": (counts := lean_counts(its, outlets)),
+            "blindspot": blindspot(counts),
             "items": [{"outlet_id": it["outlet_id"], "title": it["title"], "title_en": english(it),
                        "url": it["url"], "published": it["published"]}
                       for it in sorted(its, key=lambda i: i["published"])],

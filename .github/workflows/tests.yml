@@ -21,4 +21,18 @@ jobs:
         with:
           path: .models
           key: models-v1
-      - run: pytest -q -rs
+      - run: pytest -q -rs --ignore=tests/test_ui.py
+
+  ui:
+    runs-on: ubuntu-latest
+    env:
+      NC_UI_TESTS: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install pytest playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: pytest -q -rs tests/test_ui.py

@@ -219,3 +219,15 @@ def test_story_output_shape():
     assert s["counts"] == {"left": 1, "lean_left": 0, "center": 1, "lean_right": 0, "right": 1}
     assert set(s["items"][0]) == {"outlet_id", "title", "title_en", "url", "published"}
     assert "summary" not in s["items"][0]  # RSS descriptions never published
+
+
+@pytest.mark.parametrize("counts,expected", [
+    ({"left": 2, "lean_left": 4, "center": 2, "lean_right": 0, "right": 0}, "right"),   # right ignoring it
+    ({"left": 0, "lean_left": 0, "center": 3, "lean_right": 3, "right": 2}, "left"),    # left ignoring it
+    ({"left": 2, "lean_left": 2, "center": 1, "lean_right": 1, "right": 1}, None),
+    ({"left": 2, "lean_left": 2, "center": 0, "lean_right": 0, "right": 0}, None),      # fewer than 5 outlets
+    ({"left": 0, "lean_left": 0, "center": 6, "lean_right": 0, "right": 0}, None),      # center only
+    ({"left": 3, "lean_left": 3, "center": 0, "lean_right": 1, "right": 0}, "right"),   # 6/7 = 0.857
+])
+def test_blindspot(counts, expected):
+    assert write.blindspot(counts) == expected
