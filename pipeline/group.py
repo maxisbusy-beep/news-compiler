@@ -22,7 +22,7 @@ import numpy as np
 from .translate import MODELS_DIR, english
 
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-GROUP_THRESHOLD = 0.45     # cosine distance; tuned in Phase 4 (see tools/tune_threshold.py)
+GROUP_THRESHOLD = 0.425    # cosine distance; Phase 4 tuning: loosest with fixture precision >= 0.97
 MATCH_SIMILARITY = 0.80    # centroid similarity needed to inherit a previous story's ID
 MIN_OUTLETS = 2
 

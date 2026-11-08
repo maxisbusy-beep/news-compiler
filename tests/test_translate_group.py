@@ -10,7 +10,7 @@ from pipeline.tools import tune_threshold
 from .conftest import fake_embed, fake_translate, requires_models
 
 # Locked after tuning on the fixture with the real model (see SPEC, Phase 4).
-LOCKED_F1 = 0.0  # updated after the first tuning run
+LOCKED_F1 = 0.887  # fixture pairwise F1 at GROUP_THRESHOLD 0.425 (precision 0.983, recall 0.808)
 
 
 def item(i, outlet, title, lang="en", first_seen="2026-11-08T10:00:00Z"):
