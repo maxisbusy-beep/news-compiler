@@ -45,5 +45,6 @@
   {"id": "japannews", "domain": "japannews.yomiuri.co.jp", "proposed": true, "feeds": ["https://japannews.yomiuri.co.jp/feed/"]},
   {"id": "straitstimes", "domain": "straitstimes.com", "proposed": true, "feeds": ["https://www.straitstimes.com/news/world/rss.xml", "https://www.straitstimes.com/news/asia/rss.xml"]},
   {"id": "theaustralian", "domain": "theaustralian.com.au", "proposed": true, "feeds": ["https://www.theaustralian.com.au/feed", "https://www.theaustralian.com.au/nation/rss"]},
+  {"id": "nationalreview", "domain": "nationalreview.com", "proposed": true, "feeds": ["https://www.nationalreview.com/news/feed/", "https://www.nationalreview.com/feed/"]},
   {"id": "cbc", "domain": "cbc.ca", "proposed": true, "feeds": ["https://www.cbc.ca/webfeed/rss/rss-topstories", "https://www.cbc.ca/webfeed/rss/rss-world"]}
 ]
