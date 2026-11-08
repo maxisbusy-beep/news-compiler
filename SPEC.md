@@ -99,6 +99,7 @@ site/
   "generated_at": "ISO-8601",
   "stories": [{
     "id": "s_<stable hash>",
+    "country": "USA",
     "headline": "…",
     "headline_source": "model | wire:<outlet_id> | nearest",
     "summary": "…",
@@ -119,6 +120,7 @@ site/
 ```
 
 - `blindspot` is `null`, `"left"` or `"right"`. The value names the side that is ignoring the story.
+- `country` is a short country name shown before the headline as "USA – headline" (Max, Phase 5 gate). "World" for stories spanning many countries; empty when unclear. The model proposes it, place names in the outlets' headlines must support it, and otherwise the clearly dominant country in those headlines is used (`countries.py`). A known country also sets `region`.
 - `data/state.json` holds what the next run needs: story centroids (rounded floats), item-to-story map, feed ETags and Last-Modified values, the generation queue, and the last headline outlet count per story.
 - `data/health.json` holds, per feed: last status, item count, error, and last success time.
 

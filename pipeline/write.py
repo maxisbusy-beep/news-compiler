@@ -13,13 +13,14 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 from collections import Counter
 from typing import Callable
 
 import numpy as np
 
-from . import checks, regions
+from . import checks, countries, regions
 from .translate import MODELS_DIR, english
 
 # name -> (Hugging Face repo, GGUF file). Licenses: Qwen research license,
@@ -48,8 +49,9 @@ SCHEMA = {
         "headline": {"type": "string"},
         "summary": {"type": "string"},
         "region": {"type": "string", "enum": REGIONS},
+        "country": {"type": "string"},
     },
-    "required": ["belongs", "headline", "summary", "region"],
+    "required": ["belongs", "headline", "summary", "region", "country"],
 }
 
 PROMPT = """You write neutral, factual news headlines, like a wire service.
@@ -66,6 +68,7 @@ Return JSON with:
   * No news outlet names. No opinion or emotional words (such as slams, chaos, radical, shocking, disaster, regime).
 - "summary": 2 or 3 short sentences of facts that at least two items agree on. Same rules as the headline.
 - "region": where the event happens: one of us, europe, middle_east, asia, africa, americas, oceania, global.
+- "country": the one country where the event mainly happens, as a short name (USA, UK, Germany, Israel, Gaza, Egypt, Japan ...). Use "World" if it truly spans many countries. Do not repeat the country at the start of the headline.
 
 Items:
 {items}
@@ -146,8 +149,17 @@ def parse_output(text: str, n_items: int) -> dict | None:
         "headline": data.get("headline") if isinstance(data.get("headline"), str) else "",
         "summary": data.get("summary") if isinstance(data.get("summary"), str) else "",
         "region": data.get("region") if data.get("region") in REGIONS else None,
+        "country": data.get("country") if isinstance(data.get("country"), str) else None,
     }
     return out
+
+
+def strip_country_prefix(headline: str) -> str:
+    """The app shows the country label itself; drop "USA - " / "Israel: " if the model added one."""
+    m = re.match(r"^([A-Z][\w .'’]{1,30}?)\s*[-–—:|]\s+(.*)$", headline)
+    if m and countries.normalize(m.group(1)):
+        return m.group(2)
+    return headline
 
 
 # --- fallback ----------------------------------------------------------------
@@ -200,7 +212,7 @@ def generate(story_items: list[dict], outlets: dict, llm: LlmFn,
     sources = [english(it) for it in kept]
     headline = ""
     if parsed:
-        headline = " ".join(parsed["headline"].split())
+        headline = strip_country_prefix(" ".join(parsed["headline"].split()))
         result["fails"] = checks.check_headline(headline, sources)
     if parsed and not result["fails"]:
         result["headline"], result["headline_source"] = headline, "model"
@@ -210,8 +222,10 @@ def generate(story_items: list[dict], outlets: dict, llm: LlmFn,
     summary = " ".join((parsed or {}).get("summary", "").split())
     sum_sources = [english(it) for it in sample] + [it.get("summary", "") for it in sample]
     result["summary"] = summary if summary and not checks.check_summary(summary, sum_sources) else ""
-    result["region"] = regions.resolve_region((parsed or {}).get("region"), [english(it) for it in kept],
-                                              majority_region(kept, outlets))
+    titles = [english(it) for it in kept]
+    result["country"] = countries.resolve_country((parsed or {}).get("country"), titles)
+    result["region"] = (countries.region_of(result["country"])
+                        or regions.resolve_region((parsed or {}).get("region"), titles, majority_region(kept, outlets)))
     return result
 
 
@@ -272,21 +286,28 @@ def write_all(stories: list[dict], items: list[dict], outlets_list: list[dict], 
             stats["errors"] += r["error"] is not None
             stats["fail_reasons"].update(r["fails"])
             entry = {"headline": r["headline"], "headline_source": r["headline_source"],
-                     "summary": r["summary"], "region": r["region"], "rejected": r["rejected"],
+                     "summary": r["summary"], "region": r["region"], "country": r["country"],
+                     "rejected": r["rejected"],
                      "tried_outlets": n_out, "fails": r["fails"], "error": r["error"]}
             rejected = set(r["rejected"])
             its = [it for it in its if it["id"] not in rejected]
         elif not entry.get("headline"):
             stats["queued"] += needs
             h, src = fallback_headline(its, s.get("centroid"), vec_of)
-            entry = {"headline": h, "headline_source": src, "summary": "",
-                     "region": regions.resolve_region(None, [english(it) for it in its], majority_region(its, outlets)),
+            titles = [english(it) for it in its]
+            country = countries.resolve_country(None, titles)
+            entry = {"headline": h, "headline_source": src, "summary": "", "country": country,
+                     "region": countries.region_of(country)
+                     or regions.resolve_region(None, titles, majority_region(its, outlets)),
                      "rejected": [], "tried_outlets": None}
         else:
             stats["queued"] += needs
+        if "country" not in entry:  # stored before country labels existed
+            entry["country"] = countries.resolve_country(None, [english(it) for it in its])
         new_gen[sid] = entry
         out.append({
             "id": sid,
+            "country": entry["country"],
             "headline": entry["headline"],
             "headline_source": entry["headline_source"],
             "summary": entry.get("summary", ""),

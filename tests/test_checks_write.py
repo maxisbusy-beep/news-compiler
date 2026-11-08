@@ -213,8 +213,9 @@ def test_story_output_shape():
                          "summary": "", "region": "middle_east"})
     out, _, _ = write.write_all(stories, EGYPT, OUTLETS, {}, llm, {}, "now")
     s = out[0]
-    assert set(s) == {"id", "headline", "headline_source", "summary", "region", "first_seen", "updated",
-                      "counts", "blindspot", "items"}
+    assert set(s) == {"id", "country", "headline", "headline_source", "summary", "region", "first_seen",
+                      "updated", "counts", "blindspot", "items"}
+    assert s["country"] == "Egypt"
     assert s["counts"] == {"left": 1, "lean_left": 0, "center": 1, "lean_right": 0, "right": 1}
     assert set(s["items"][0]) == {"outlet_id", "title", "title_en", "url", "published"}
     assert "summary" not in s["items"][0]  # RSS descriptions never published
