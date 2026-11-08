@@ -1,0 +1,52 @@
+name: screenshot
+
+# Phone-size screenshots of the live site, pushed to the screenshots branch.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright && python -m playwright install --with-deps chromium
+      - name: Take screenshots
+        run: |
+          mkdir out
+          cat > shots.py <<'EOF'
+          from playwright.sync_api import sync_playwright
+          base = "https://maxisbusy-beep.github.io/news-compiler/"
+          errors = []
+          with sync_playwright() as p:
+              b = p.chromium.launch()
+              for scheme in ("light", "dark"):
+                  ctx = b.new_context(viewport={"width": 390, "height": 844}, device_scale_factor=2, color_scheme=scheme)
+                  pg = ctx.new_page()
+                  pg.on("pageerror", lambda e: errors.append(str(e)))
+                  pg.on("console", lambda m: m.type == "error" and errors.append(m.text))
+                  pg.goto(base, wait_until="networkidle"); pg.wait_for_selector(".story")
+                  pg.screenshot(path=f"out/feed-{scheme}.png")
+                  pg.locator(".story a").first.click(); pg.wait_for_selector(".row"); pg.wait_for_timeout(500)
+                  pg.screenshot(path=f"out/story-{scheme}.png")
+                  if scheme == "light":
+                      pg.goto(base + "#/health"); pg.wait_for_selector(".health"); pg.screenshot(path="out/health.png", full_page=True)
+                      fonts = pg.evaluate("[...document.fonts].filter(f => f.status === 'loaded').map(f => f.family)")
+                      print("fonts loaded:", sorted(set(fonts)))
+                  ctx.close()
+              b.close()
+          print("errors:", errors)
+          EOF
+          python shots.py
+      - name: Push to the screenshots branch
+        run: |
+          cd out
+          git init -q -b screenshots
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Screenshots ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" screenshots
