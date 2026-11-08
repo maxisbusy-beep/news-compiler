@@ -19,7 +19,7 @@ from typing import Callable
 
 import numpy as np
 
-from . import checks
+from . import checks, regions
 from .translate import MODELS_DIR, english
 
 # name -> (Hugging Face repo, GGUF file). Licenses: Qwen research license,
@@ -29,7 +29,7 @@ MODELS = {
     "llama3.2-3b": ("bartowski/Llama-3.2-3B-Instruct-GGUF", "Llama-3.2-3B-Instruct-Q4_K_M.gguf"),
     "gemma3-4b": ("unsloth/gemma-3-4b-it-GGUF", "gemma-3-4b-it-Q4_K_M.gguf"),
 }
-DEFAULT_MODEL = os.environ.get("NC_MODEL", "qwen2.5-3b")  # set from Max's pick at the Phase 5 gate
+DEFAULT_MODEL = os.environ.get("NC_MODEL", "llama3.2-3b")  # Max's pick at the Phase 5 gate
 
 MAX_GEN_PER_RUN = 20
 TIME_BUDGET_S = 600          # stop starting new generations after this long
@@ -210,7 +210,8 @@ def generate(story_items: list[dict], outlets: dict, llm: LlmFn,
     summary = " ".join((parsed or {}).get("summary", "").split())
     sum_sources = [english(it) for it in sample] + [it.get("summary", "") for it in sample]
     result["summary"] = summary if summary and not checks.check_summary(summary, sum_sources) else ""
-    result["region"] = (parsed or {}).get("region") or majority_region(kept, outlets)
+    result["region"] = regions.resolve_region((parsed or {}).get("region"), [english(it) for it in kept],
+                                              majority_region(kept, outlets))
     return result
 
 
@@ -279,7 +280,8 @@ def write_all(stories: list[dict], items: list[dict], outlets_list: list[dict], 
             stats["queued"] += needs
             h, src = fallback_headline(its, s.get("centroid"), vec_of)
             entry = {"headline": h, "headline_source": src, "summary": "",
-                     "region": majority_region(its, outlets), "rejected": [], "tried_outlets": None}
+                     "region": regions.resolve_region(None, [english(it) for it in its], majority_region(its, outlets)),
+                     "rejected": [], "tried_outlets": None}
         else:
             stats["queued"] += needs
         new_gen[sid] = entry

@@ -16,6 +16,7 @@ concurrency:
 jobs:
   live:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     env:
       NC_MODELS_DIR: ${{ github.workspace }}/.models
     steps:
@@ -28,7 +29,8 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: .models
-          key: models-v1
+          key: models-v2-gguf
+          restore-keys: models-v1
 
       # Private working data (raw items incl. RSS descriptions, ETags) lives in
       # the Actions cache, never in the public repo or on Pages.
@@ -42,14 +44,16 @@ jobs:
         run: python -m pipeline.tools.tune_threshold
 
       - name: Run 1
-        run: python -m pipeline.run --data-dir work
+        run: time python -m pipeline.run --data-dir work
       - run: cp work/raw.json run1-raw.json && cp work/groups.json run1-groups.json
       - name: Run 2 (immediately after)
-        run: python -m pipeline.run --data-dir work
+        run: time python -m pipeline.run --data-dir work
       - name: Duplicate check
         run: python -m pipeline.tools.check_dupes work run1-raw.json
       - name: Stories for review
         run: python -m pipeline.tools.preview_stories work run1-groups.json
+      - name: Headlines for review
+        run: python -m pipeline.tools.preview_headlines work
 
       - uses: actions/cache/save@v4
         if: always()
