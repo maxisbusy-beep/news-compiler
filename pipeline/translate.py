@@ -22,7 +22,7 @@ MODELS_DIR = Path(os.environ.get("NC_MODELS_DIR", Path.home() / ".cache" / "news
 TranslateFn = Callable[[str, list[str]], list[str]]  # (lang, titles) -> english titles
 
 # Bump when translation output changes, so stored translations are redone.
-TRANSLATION_VERSION = 2
+TRANSLATION_VERSION = 3
 
 
 def package_dir(lang: str) -> Path:
@@ -89,7 +89,18 @@ class ArgosTranslator:
         # Join pieces ourselves (as Argos does): some packages' output pieces
         # are not all in the source sentencepiece vocabulary, so sp.decode
         # would leave the "▁" word markers in the text.
-        return [" ".join("".join(r.hypotheses[0]).replace("▁", " ").split()) for r in results]
+        return [clean_output(" ".join("".join(r.hypotheses[0]).replace("▁", " ").split())) for r in results]
+
+
+# Strings the Argos models sometimes invent at the end of a headline.
+HALLUCINATED_SUFFIXES = (" · Global Voices", " - Global Voices", " | Global Voices")
+
+
+def clean_output(text: str) -> str:
+    for suffix in HALLUCINATED_SUFFIXES:
+        if text.endswith(suffix):
+            text = text[: -len(suffix)].rstrip()
+    return text
 
 
 _translators: dict[str, ArgosTranslator] = {}
