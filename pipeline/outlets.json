@@ -1,0 +1,863 @@
+[
+  {
+    "id": "ap",
+    "name": "AP",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:apnews.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": true,
+    "enabled": true,
+    "via_google_news": true
+  },
+  {
+    "id": "reuters",
+    "name": "Reuters",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:reuters.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "global",
+    "country": "UK",
+    "language": "en",
+    "lean": "center",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": true,
+    "enabled": true,
+    "via_google_news": true
+  },
+  {
+    "id": "thehill",
+    "name": "The Hill",
+    "feeds": [
+      "https://thehill.com/feed/",
+      "https://thehill.com/news/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "center",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "wsj",
+    "name": "Wall Street Journal",
+    "feeds": [
+      "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+      "https://feeds.content.dowjones.io/public/rss/RSSUSnews"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "center",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "newsnation",
+    "name": "NewsNation",
+    "feeds": [
+      "https://www.newsnationnow.com/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "center",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/blind-survey/rating-bias-cnn-fox-news-newsnation-npr-straight-arrow-news",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "npr",
+    "name": "NPR",
+    "feeds": [
+      "https://feeds.npr.org/1001/rss.xml",
+      "https://feeds.npr.org/1004/rss.xml"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/news-source/npr-media-bias",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "nyt",
+    "name": "New York Times",
+    "feeds": [
+      "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+      "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "wapo",
+    "name": "Washington Post",
+    "feeds": [
+      "https://feeds.washingtonpost.com/rss/world",
+      "https://feeds.washingtonpost.com/rss/politics",
+      "https://feeds.washingtonpost.com/rss/national"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "cnn",
+    "name": "CNN",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:cnn.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true,
+    "via_google_news": true
+  },
+  {
+    "id": "nbc",
+    "name": "NBC News",
+    "feeds": [
+      "https://feeds.nbcnews.com/nbcnews/public/news",
+      "https://feeds.nbcnews.com/nbcnews/public/world"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "politico",
+    "name": "Politico",
+    "feeds": [
+      "https://rss.politico.com/politics-news.xml"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/news-source/politico-media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "huffpost",
+    "name": "HuffPost",
+    "feeds": [
+      "https://www.huffpost.com/section/politics/feed"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://allsides.com/news-source/huffpost-media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "msnbc",
+    "name": "MS NOW (MSNBC)",
+    "feeds": [
+      "https://www.ms.now/rss"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/msnbc/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "nypost",
+    "name": "New York Post",
+    "feeds": [
+      "https://nypost.com/feed/",
+      "https://nypost.com/news/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "washexaminer",
+    "name": "Washington Examiner",
+    "feeds": [
+      "https://www.washingtonexaminer.com/feed/",
+      "https://www.washingtonexaminer.com/section/news/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "dispatch",
+    "name": "The Dispatch",
+    "feeds": [
+      "https://thedispatch.com/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/news-source/dispatch-media-bias",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "foxnews",
+    "name": "Fox News",
+    "feeds": [
+      "https://moxie.foxnews.com/google-publisher/latest.xml",
+      "https://moxie.foxnews.com/google-publisher/world.xml",
+      "https://feeds.foxnews.com/foxnews/latest"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/blind-survey/rating-bias-cnn-fox-news-newsnation-npr-straight-arrow-news",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "dailywire",
+    "name": "Daily Wire",
+    "feeds": [
+      "https://www.dailywire.com/feeds/rss.xml"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-daily-wire/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "breitbart",
+    "name": "Breitbart",
+    "feeds": [
+      "https://feeds.feedburner.com/breitbart",
+      "https://www.breitbart.com/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/breitbart/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "bbc",
+    "name": "BBC",
+    "feeds": [
+      "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "https://feeds.bbci.co.uk/news/rss.xml"
+    ],
+    "region": "europe",
+    "country": "UK",
+    "language": "en",
+    "lean": "center",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/news-source/bbc-news-media-bias",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "guardian",
+    "name": "The Guardian",
+    "feeds": [
+      "https://www.theguardian.com/world/rss",
+      "https://www.theguardian.com/international/rss"
+    ],
+    "region": "europe",
+    "country": "UK",
+    "language": "en",
+    "lean": "left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "telegraph",
+    "name": "The Telegraph",
+    "feeds": [
+      "https://www.telegraph.co.uk/rss.xml"
+    ],
+    "region": "europe",
+    "country": "UK",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://allsides.com/news-source/telegraph-uk-media-bias",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "dailymail",
+    "name": "Daily Mail",
+    "feeds": [
+      "https://www.dailymail.co.uk/news/index.rss",
+      "https://www.dailymail.co.uk/articles.rss"
+    ],
+    "region": "europe",
+    "country": "UK",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://allsides.com/blog/announcing-allsides-media-bias-chart-version-11",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "dw",
+    "name": "DW",
+    "feeds": [
+      "https://rss.dw.com/rdf/rss-en-all",
+      "https://rss.dw.com/rdf/rss-en-top",
+      "https://rss.dw.com/xml/rss-en-all"
+    ],
+    "region": "europe",
+    "country": "DE",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/dw-news/",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": true,
+    "enabled": true
+  },
+  {
+    "id": "tagesschau",
+    "name": "Tagesschau",
+    "feeds": [
+      "https://www.tagesschau.de/index~rss2.xml",
+      "https://www.tagesschau.de/xml/rss2"
+    ],
+    "region": "europe",
+    "country": "DE",
+    "language": "de",
+    "lean": "center",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/tagesschau-bias/",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "spiegel",
+    "name": "Der Spiegel",
+    "feeds": [
+      "https://www.spiegel.de/schlagzeilen/index.rss",
+      "https://www.spiegel.de/index.rss"
+    ],
+    "region": "europe",
+    "country": "DE",
+    "language": "de",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/spiegel-online/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "faz",
+    "name": "FAZ",
+    "feeds": [
+      "https://www.faz.net/rss/aktuell/",
+      "https://www.faz.net/rss/aktuell/politik/"
+    ],
+    "region": "europe",
+    "country": "DE",
+    "language": "de",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/frankfurter-allgemeine-zeitung-faz/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "welt",
+    "name": "Die Welt",
+    "feeds": [
+      "https://www.welt.de/feeds/latest.rss",
+      "https://www.welt.de/feeds/topnews.rss"
+    ],
+    "region": "europe",
+    "country": "DE",
+    "language": "de",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/die-welt/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "france24",
+    "name": "France 24",
+    "feeds": [
+      "https://www.france24.com/en/rss",
+      "https://www.france24.com/en/world/rss"
+    ],
+    "region": "europe",
+    "country": "FR",
+    "language": "en",
+    "lean": "center",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/france24",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "lemonde",
+    "name": "Le Monde",
+    "feeds": [
+      "https://www.lemonde.fr/rss/une.xml",
+      "https://www.lemonde.fr/international/rss_full.xml"
+    ],
+    "region": "europe",
+    "country": "FR",
+    "language": "fr",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/le-monde/",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "lefigaro",
+    "name": "Le Figaro",
+    "feeds": [
+      "https://www.lefigaro.fr/rss/figaro_actualites.xml",
+      "https://www.lefigaro.fr/rss/figaro_international.xml"
+    ],
+    "region": "europe",
+    "country": "FR",
+    "language": "fr",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/le-figaro-bias/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "kyivindependent",
+    "name": "Kyiv Independent",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:kyivindependent.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "europe",
+    "country": "UA",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/kyiv-independent-bias/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true,
+    "via_google_news": true
+  },
+  {
+    "id": "aljazeera",
+    "name": "Al Jazeera English",
+    "feeds": [
+      "https://www.aljazeera.com/xml/rss/all.xml"
+    ],
+    "region": "middle_east",
+    "country": "QA",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/al-jazeera/",
+    "tags": [
+      "state_funded"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "timesofisrael",
+    "name": "Times of Israel",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:timesofisrael.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "middle_east",
+    "country": "IL",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/times-of-israel/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true,
+    "via_google_news": true
+  },
+  {
+    "id": "haaretz",
+    "name": "Haaretz",
+    "feeds": [
+      "https://www.haaretz.com/srv/haaretz-latest-headlines"
+    ],
+    "region": "middle_east",
+    "country": "IL",
+    "language": "en",
+    "lean": "left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/haaretz/",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "timesofindia",
+    "name": "Times of India",
+    "feeds": [
+      "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+      "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+    ],
+    "region": "asia",
+    "country": "IN",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/times-of-india/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "thehindu",
+    "name": "The Hindu",
+    "feeds": [
+      "https://www.thehindu.com/news/international/feeder/default.rss",
+      "https://www.thehindu.com/news/national/feeder/default.rss",
+      "https://www.thehindu.com/feeder/default.rss"
+    ],
+    "region": "asia",
+    "country": "IN",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-hindu/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "scmp",
+    "name": "South China Morning Post",
+    "feeds": [
+      "https://www.scmp.com/rss/91/feed",
+      "https://www.scmp.com/rss/2/feed",
+      "https://www.scmp.com/rss/4/feed"
+    ],
+    "region": "asia",
+    "country": "HK",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/south-china-morning-post/",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "nhk",
+    "name": "NHK World",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:www3.nhk.or.jp/nhkworld+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "asia",
+    "country": "JP",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/nhk-world",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true,
+    "via_google_news": true
+  },
+  {
+    "id": "abcau",
+    "name": "ABC Australia",
+    "feeds": [
+      "https://www.abc.net.au/news/feed/51120/rss.xml",
+      "https://www.abc.net.au/news/feed/45910/rss.xml"
+    ],
+    "region": "oceania",
+    "country": "AU",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/abc-news-australia",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "globeandmail",
+    "name": "Globe and Mail",
+    "feeds": [
+      "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/",
+      "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/"
+    ],
+    "region": "americas",
+    "country": "CA",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-globe-and-mail/",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "jpost",
+    "name": "Jerusalem Post",
+    "feeds": [
+      "https://www.jpost.com/rss/rssfeedsfrontpage.aspx"
+    ],
+    "region": "middle_east",
+    "country": "IL",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-jerusalem-post/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": false
+  },
+  {
+    "id": "arabnews",
+    "name": "Arab News",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:arabnews.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "middle_east",
+    "country": "SA",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/arab-news",
+    "tags": [
+      "state_funded"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": false,
+    "via_google_news": true
+  },
+  {
+    "id": "japannews",
+    "name": "Japan News (Yomiuri)",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:japannews.yomiuri.co.jp+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "asia",
+    "country": "JP",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-japan-news/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": false,
+    "via_google_news": true
+  },
+  {
+    "id": "straitstimes",
+    "name": "Straits Times",
+    "feeds": [
+      "https://www.straitstimes.com/news/world/rss.xml",
+      "https://www.straitstimes.com/news/asia/rss.xml"
+    ],
+    "region": "asia",
+    "country": "SG",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-straits-times/",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": false
+  },
+  {
+    "id": "theaustralian",
+    "name": "The Australian",
+    "feeds": [
+      "https://news.google.com/rss/search?q=site:theaustralian.com.au+when:2d&hl=en-US&gl=US&ceid=US:en"
+    ],
+    "region": "oceania",
+    "country": "AU",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/the-australian/",
+    "tags": [],
+    "paywall": true,
+    "wire": false,
+    "enabled": false,
+    "via_google_news": true
+  },
+  {
+    "id": "cbc",
+    "name": "CBC News",
+    "feeds": [
+      "https://www.cbc.ca/webfeed/rss/rss-topstories",
+      "https://www.cbc.ca/webfeed/rss/rss-world"
+    ],
+    "region": "americas",
+    "country": "CA",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/cbc-news/",
+    "tags": [
+      "public_broadcaster"
+    ],
+    "paywall": false,
+    "wire": false,
+    "enabled": false
+  }
+]
