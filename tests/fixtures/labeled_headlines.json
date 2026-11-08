@@ -1,0 +1,74 @@
+[
+ {"label": "turkey_quake", "lang": "en", "title": "Magnitude 6.8 earthquake strikes eastern Turkey, dozens killed"},
+ {"label": "turkey_quake", "lang": "en", "title": "Deadly quake hits eastern Turkey as rescuers search rubble"},
+ {"label": "turkey_quake", "lang": "de", "title": "Schweres Erdbeben erschüttert Osttürkei – Dutzende Tote"},
+ {"label": "turkey_quake", "lang": "fr", "title": "Un séisme de magnitude 6,8 frappe l'est de la Turquie"},
+ {"label": "turkey_quake", "lang": "en", "title": "Turkey earthquake: death toll rises as aftershocks rattle region"},
+
+ {"label": "fed_cut", "lang": "en", "title": "Federal Reserve cuts interest rates by a quarter point"},
+ {"label": "fed_cut", "lang": "en", "title": "Fed lowers rates for second time this year, signals caution"},
+ {"label": "fed_cut", "lang": "de", "title": "US-Notenbank senkt den Leitzins um 0,25 Prozentpunkte"},
+ {"label": "fed_cut", "lang": "en", "title": "Powell says further rate cuts not guaranteed after Fed decision"},
+
+ {"label": "german_pensions", "lang": "de", "title": "Koalitionsstreit um die Rente: Union und SPD ringen um Kompromiss"},
+ {"label": "german_pensions", "lang": "de", "title": "Rentenpaket: Merz verteidigt Kompromiss gegen Kritik aus eigener Fraktion"},
+ {"label": "german_pensions", "lang": "en", "title": "German coalition wrangles over pension reform as Merz faces revolt"},
+ {"label": "german_pensions", "lang": "fr", "title": "Allemagne : la coalition de Merz se déchire sur la réforme des retraites"},
+
+ {"label": "gaza_aid", "lang": "en", "title": "Aid convoy enters Gaza through Rafah crossing"},
+ {"label": "gaza_aid", "lang": "en", "title": "First trucks of humanitarian aid cross into Gaza from Egypt"},
+ {"label": "gaza_aid", "lang": "fr", "title": "Un convoi d'aide humanitaire entre dans la bande de Gaza par Rafah"},
+ {"label": "gaza_aid", "lang": "en", "title": "UN says more aid trucks needed after convoy reaches Gaza"},
+
+ {"label": "iphone", "lang": "en", "title": "Apple unveils new iPhone with faster chip and longer battery life"},
+ {"label": "iphone", "lang": "en", "title": "Apple's latest iPhone launch focuses on AI features"},
+ {"label": "iphone", "lang": "de", "title": "Apple stellt neues iPhone mit KI-Funktionen vor"},
+ {"label": "iphone", "lang": "en", "title": "iPhone 18 announced: price, release date and features"},
+
+ {"label": "ca_wildfire", "lang": "en", "title": "Wildfire forces thousands to evacuate in Southern California"},
+ {"label": "ca_wildfire", "lang": "en", "title": "California blaze spreads rapidly, prompting mass evacuations"},
+ {"label": "ca_wildfire", "lang": "fr", "title": "Californie : des milliers d'habitants évacués face à un incendie"},
+ {"label": "ca_wildfire", "lang": "en", "title": "Firefighters battle wind-driven wildfire near Los Angeles"},
+
+ {"label": "france_censure", "lang": "fr", "title": "Le Premier ministre français survit à une motion de censure"},
+ {"label": "france_censure", "lang": "fr", "title": "Motion de censure rejetée : le gouvernement sauvé à l'Assemblée"},
+ {"label": "france_censure", "lang": "en", "title": "French government survives no-confidence vote in parliament"},
+ {"label": "france_censure", "lang": "de", "title": "Frankreichs Regierung übersteht Misstrauensvotum"},
+
+ {"label": "kyiv_drones", "lang": "en", "title": "Russian drone attack on Kyiv kills three, damages power grid"},
+ {"label": "kyiv_drones", "lang": "en", "title": "Kyiv hit by overnight drone barrage, officials say"},
+ {"label": "kyiv_drones", "lang": "de", "title": "Russischer Drohnenangriff auf Kiew: Drei Tote"},
+ {"label": "kyiv_drones", "lang": "en", "title": "Three killed as Russian drones strike Kyiv overnight"},
+
+ {"label": "bayern_arsenal", "lang": "en", "title": "Bayern Munich beat Arsenal 3-1 in Champions League"},
+ {"label": "bayern_arsenal", "lang": "de", "title": "Bayern schlägt Arsenal mit 3:1 in der Champions League"},
+ {"label": "bayern_arsenal", "lang": "en", "title": "Kane scores twice as Bayern down Arsenal"},
+ {"label": "bayern_arsenal", "lang": "fr", "title": "Ligue des champions : le Bayern domine Arsenal"},
+
+ {"label": "bihar_vote", "lang": "en", "title": "Voting begins in Bihar state election"},
+ {"label": "bihar_vote", "lang": "en", "title": "Millions cast ballots in Bihar as state polls open"},
+ {"label": "bihar_vote", "lang": "en", "title": "Bihar assembly election: high turnout reported in first phase"},
+
+ {"label": "cop_brazil", "lang": "en", "title": "UN climate summit opens in Brazil with calls for faster emissions cuts"},
+ {"label": "cop_brazil", "lang": "en", "title": "COP talks begin in Belém as nations face pressure on fossil fuels"},
+ {"label": "cop_brazil", "lang": "fr", "title": "La COP s'ouvre au Brésil sous la pression des pays vulnérables"},
+ {"label": "cop_brazil", "lang": "de", "title": "Weltklimakonferenz in Brasilien eröffnet"},
+
+ {"label": "us_shutdown", "lang": "en", "title": "Senate passes bill to end government shutdown"},
+ {"label": "us_shutdown", "lang": "en", "title": "Shutdown nears end as Senate approves funding deal"},
+ {"label": "us_shutdown", "lang": "en", "title": "House expected to vote on Senate-passed spending bill to end shutdown"},
+ {"label": "us_shutdown", "lang": "de", "title": "US-Senat stimmt für Ende des Shutdowns"},
+
+ {"label": "x_tokyo_drill", "lang": "en", "title": "Earthquake drill held in Tokyo schools"},
+ {"label": "x_ecb", "lang": "en", "title": "European Central Bank holds interest rates steady"},
+ {"label": "x_boe", "lang": "en", "title": "Bank of England keeps rates unchanged amid inflation worries"},
+ {"label": "x_sydney_smoke", "lang": "en", "title": "Wildfire smoke worsens air quality in Sydney"},
+ {"label": "x_real_liverpool", "lang": "en", "title": "Real Madrid beat Liverpool 2-0 in Champions League"},
+ {"label": "x_apple_shares", "lang": "en", "title": "Apple shares hit record high on strong services revenue"},
+ {"label": "x_odesa_port", "lang": "en", "title": "Russian missile strike hits Odesa port, damaging grain terminal"},
+ {"label": "x_merz_macron", "lang": "en", "title": "Merz meets Macron in Paris for talks on European defence"},
+ {"label": "x_macron_china", "lang": "fr", "title": "Emmanuel Macron se rendra en Chine le mois prochain"},
+ {"label": "x_ambassador", "lang": "en", "title": "Senate confirms new US ambassador to Japan"},
+ {"label": "x_bahnstreik", "lang": "de", "title": "Bahnstreik legt Fernverkehr in Deutschland lahm"},
+ {"label": "x_atc_strike", "lang": "fr", "title": "Grève des contrôleurs aériens : des vols annulés à Paris"}
+]

@@ -1,7 +1,8 @@
 name: live-check
 
-# Phase 3 gate: run fetch + dedupe twice back to back against live feeds,
-# carrying state between runs, and fail on any duplicate item.
+# Gate check against live feeds: tune the grouping threshold on the labeled
+# fixture, run the pipeline twice back to back with state carried between
+# runs, fail on duplicates, and print 20 stories for hand-checking.
 on:
   workflow_dispatch:
 
@@ -15,6 +16,8 @@ concurrency:
 jobs:
   live:
     runs-on: ubuntu-latest
+    env:
+      NC_MODELS_DIR: ${{ github.workspace }}/.models
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,6 +25,10 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: .models
+          key: models-v1
 
       # Private working data (raw items incl. RSS descriptions, ETags) lives in
       # the Actions cache, never in the public repo or on Pages.
@@ -31,13 +38,18 @@ jobs:
           key: pipeline-work-${{ github.run_id }}
           restore-keys: pipeline-work-
 
+      - name: Tune grouping threshold on the labeled fixture
+        run: python -m pipeline.tools.tune_threshold
+
       - name: Run 1
         run: python -m pipeline.run --data-dir work
-      - run: cp work/raw.json run1-raw.json
+      - run: cp work/raw.json run1-raw.json && cp work/groups.json run1-groups.json
       - name: Run 2 (immediately after)
         run: python -m pipeline.run --data-dir work
       - name: Duplicate check
         run: python -m pipeline.tools.check_dupes work run1-raw.json
+      - name: Stories for review
+        run: python -m pipeline.tools.preview_stories work run1-groups.json
 
       - uses: actions/cache/save@v4
         if: always()

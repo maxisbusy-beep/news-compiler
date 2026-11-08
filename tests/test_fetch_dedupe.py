@@ -8,6 +8,10 @@ import requests
 
 from pipeline import dedupe, fetch, run
 
+from .conftest import fake_embed, fake_translate
+
+FAKES = {"translate_fn": fake_translate, "embed_fn": fake_embed}
+
 FIX = Path(__file__).parent / "fixtures"
 NOW = datetime(2026, 11, 8, 12, 0, tzinfo=timezone.utc).timestamp()
 
@@ -114,12 +118,12 @@ def test_conditional_get_stored_and_sent(tmp_path):
     outlets_path = tmp_path / "outlets.json"
     outlets_path.write_text(json.dumps(OUTLETS))
     web1 = FakeWeb()
-    run.run(tmp_path, outlets_path, now=NOW, get=web1)
+    run.run(tmp_path, outlets_path, now=NOW, get=web1, **FAKES)
     state = json.loads((tmp_path / "state.json").read_text())
     assert state["feeds"]["https://a.example/feed"]["etag"] == '"v1"'
 
     web2 = FakeWeb()
-    s2 = run.run(tmp_path, outlets_path, now=NOW + 1800, get=web2)
+    s2 = run.run(tmp_path, outlets_path, now=NOW + 1800, get=web2, **FAKES)
     sent = next(h for u, h in web2.calls if u == "https://a.example/feed")
     assert sent["If-None-Match"] == '"v1"'
     health = json.loads((tmp_path / "health.json").read_text())["feeds"]
@@ -133,9 +137,9 @@ def test_conditional_get_stored_and_sent(tmp_path):
 def test_two_runs_no_duplicates(tmp_path):
     outlets_path = tmp_path / "outlets.json"
     outlets_path.write_text(json.dumps(OUTLETS))
-    s1 = run.run(tmp_path, outlets_path, now=NOW, get=FakeWeb())
+    s1 = run.run(tmp_path, outlets_path, now=NOW, get=FakeWeb(), **FAKES)
     raw1 = json.loads((tmp_path / "raw.json").read_text())["items"]
-    s2 = run.run(tmp_path, outlets_path, now=NOW + 1800, get=FakeWeb())
+    s2 = run.run(tmp_path, outlets_path, now=NOW + 1800, get=FakeWeb(), **FAKES)
     raw2 = json.loads((tmp_path / "raw.json").read_text())["items"]
     assert s2["added"] == 0
     assert len(raw2) == len(raw1)

@@ -1,10 +1,10 @@
-"""Pipeline orchestrator. Phase 3 runs steps 1-2 (fetch, dedupe).
+"""Pipeline orchestrator. Runs steps 1-4 (fetch, dedupe, translate, group).
 
 Usage: python -m pipeline.run --data-dir DIR [--outlets pipeline/outlets.json]
 
 DIR holds the private working files carried between runs (raw.json with RSS
-descriptions, state.json) plus health.json. Writes all three back to DIR and
-appends a feed health table to $GITHUB_STEP_SUMMARY when set.
+descriptions, state.json, groups.json, emb_cache.npz) plus health.json.
+Appends a summary and feed health table to $GITHUB_STEP_SUMMARY when set.
 """
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ import os
 import time
 from pathlib import Path
 
-from . import dedupe, fetch
+from . import dedupe, fetch, group, translate
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -47,21 +47,44 @@ def health_table(health: list[dict], outlets: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def run(data_dir: Path, outlets_path: Path, now: float | None = None, get=None) -> dict:
+def run(data_dir: Path, outlets_path: Path, now: float | None = None, get=None,
+        translate_fn=None, embed_fn=None) -> dict:
     now = now if now is not None else time.time()
     data_dir.mkdir(parents=True, exist_ok=True)
     outlets = load_json(outlets_path, [])
     state = load_json(data_dir / "state.json", {})
     existing = load_json(data_dir / "raw.json", {}).get("items", [])
+    timings = {}
 
+    t0 = time.time()
     kwargs = {"get": get} if get else {}
     new_items, health, feed_state = fetch.fetch_all(outlets, state.get("feeds", {}), now, **kwargs)
     items, stats = dedupe.merge(existing, new_items, now)
+    timings["fetch_dedupe_s"] = round(time.time() - t0, 1)
+
+    t0 = time.time()
+    tstats = translate.translate_items(items, translate_fn or translate.argos_translate)
+    timings["translate_s"] = round(time.time() - t0, 1)
+
+    t0 = time.time()
+    cache_path = data_dir / "emb_cache.npz"
+    cache = group.load_cache(cache_path)
+    vectors = group.item_vectors(items, embed_fn or group.fastembed_embed, cache)
+    timings["embed_s"] = round(time.time() - t0, 1)
+    t0 = time.time()
+    stories, gstate, gstats = group.build_stories(items, vectors, state)
+    timings["cluster_s"] = round(time.time() - t0, 1)
+    group.save_cache(cache_path, cache, {group.text_key(it) for it in items})
 
     state["feeds"] = feed_state
+    state.update(gstate)
     write_json(data_dir / "raw.json", {"generated_at": fetch.iso(now), "items": items})
     write_json(data_dir / "state.json", state)
     write_json(data_dir / "health.json", {"generated_at": fetch.iso(now), "feeds": health})
+    write_json(data_dir / "groups.json", {
+        "generated_at": fetch.iso(now),
+        "stories": [{k: v for k, v in s.items() if k != "centroid"} for s in stories],
+    })
 
     summary = {
         "items": len(items),
@@ -71,6 +94,10 @@ def run(data_dir: Path, outlets_path: Path, now: float | None = None, get=None) 
         "feeds_not_modified": sum(h["status"] == "not_modified" for h in health),
         "feeds_failed": sum(h["status"] in ("error", "empty") for h in health),
         "feeds_total": len(health),
+        "translated": tstats["translated"],
+        "translate_failed": tstats["failed_langs"],
+        **{f"group_{k}": v for k, v in gstats.items()},
+        **timings,
     }
     out = os.environ.get("GITHUB_STEP_SUMMARY")
     if out:
