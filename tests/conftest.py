@@ -25,9 +25,18 @@ def fake_embed(texts):
     return out
 
 
+def fake_llm(prompt):
+    """Stand-in model: keeps every item and echoes the first headline."""
+    lines = [l for l in prompt.splitlines() if l.startswith("[")]
+    first = lines[0].split("] ", 1)[1].split(" | ")[0] if lines else "Nothing"
+    import json as _json
+    return _json.dumps({"belongs": list(range(len(lines))), "headline": first,
+                        "summary": "", "region": "global"})
+
+
 @pytest.fixture
 def fakes():
-    return {"translate_fn": fake_translate, "embed_fn": fake_embed}
+    return {"translate_fn": fake_translate, "embed_fn": fake_embed, "llm_fn": fake_llm}
 
 
 requires_models = pytest.mark.skipif(

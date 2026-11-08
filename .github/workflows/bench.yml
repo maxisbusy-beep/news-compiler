@@ -1,0 +1,39 @@
+name: bench-models
+
+# Phase 5 gate: compare headline models on the same live stories.
+on:
+  workflow_dispatch:
+    inputs:
+      models:
+        description: "Model names (space separated); empty = all"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      NC_MODELS_DIR: ${{ github.workspace }}/.models
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: .models
+          key: models-v2-gguf
+          restore-keys: models-v1
+      - uses: actions/cache/restore@v4
+        with:
+          path: work
+          key: pipeline-work-${{ github.run_id }}
+          restore-keys: pipeline-work-
+      - run: nproc && free -g
+      - run: python -m pipeline.tools.bench_models work ${{ github.event.inputs.models }}

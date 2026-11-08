@@ -1,3 +1,4 @@
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
 pytest>=8
 pillow>=10
 feedparser>=6
@@ -7,3 +8,5 @@ scikit-learn>=1.4
 fastembed>=0.5
 ctranslate2>=4
 sentencepiece>=0.2
+huggingface_hub>=0.23
+llama-cpp-python>=0.3.8

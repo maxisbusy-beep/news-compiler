@@ -8,9 +8,9 @@ import requests
 
 from pipeline import dedupe, fetch, run
 
-from .conftest import fake_embed, fake_translate
+from .conftest import fake_embed, fake_llm, fake_translate
 
-FAKES = {"translate_fn": fake_translate, "embed_fn": fake_embed}
+FAKES = {"translate_fn": fake_translate, "embed_fn": fake_embed, "llm_fn": fake_llm}
 
 FIX = Path(__file__).parent / "fixtures"
 NOW = datetime(2026, 11, 8, 12, 0, tzinfo=timezone.utc).timestamp()

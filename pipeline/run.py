@@ -1,4 +1,4 @@
-"""Pipeline orchestrator. Runs steps 1-4 (fetch, dedupe, translate, group).
+"""Pipeline orchestrator. Runs steps 1-5 (fetch, dedupe, translate, group, write).
 
 Usage: python -m pipeline.run --data-dir DIR [--outlets pipeline/outlets.json]
 
@@ -14,7 +14,7 @@ import os
 import time
 from pathlib import Path
 
-from . import dedupe, fetch, group, translate
+from . import dedupe, fetch, group, translate, write
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -47,8 +47,14 @@ def health_table(health: list[dict], outlets: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def rank_score(story: dict, now: float) -> float:
+    """SPEC feed ranking: distinct outlets x 0.5^(hours since updated / 6)."""
+    hours = max(0.0, (now - dedupe.parse_iso(story["updated"])) / 3600)
+    return sum(story["counts"].values()) * 0.5 ** (hours / 6)
+
+
 def run(data_dir: Path, outlets_path: Path, now: float | None = None, get=None,
-        translate_fn=None, embed_fn=None) -> dict:
+        translate_fn=None, embed_fn=None, llm_fn=None) -> dict:
     now = now if now is not None else time.time()
     data_dir.mkdir(parents=True, exist_ok=True)
     outlets = load_json(outlets_path, [])
@@ -76,8 +82,18 @@ def run(data_dir: Path, outlets_path: Path, now: float | None = None, get=None,
     timings["cluster_s"] = round(time.time() - t0, 1)
     group.save_cache(cache_path, cache, {group.text_key(it) for it in items})
 
+    t0 = time.time()
+    vec_of = {it["id"]: v for it, v in zip(items, vectors)}
+    llm = llm_fn if llm_fn is not None else write.model_factory()
+    out_stories, gen_state, wstats = write.write_all(
+        stories, items, outlets, state, llm, vec_of, fetch.iso(now))
+    timings["write_s"] = round(time.time() - t0, 1)
+    out_stories.sort(key=lambda s: -rank_score(s, now))
+
     state["feeds"] = feed_state
     state.update(gstate)
+    state["gen"] = gen_state
+    write_json(data_dir / "stories.json", {"generated_at": fetch.iso(now), "stories": out_stories})
     write_json(data_dir / "raw.json", {"generated_at": fetch.iso(now), "items": items})
     write_json(data_dir / "state.json", state)
     write_json(data_dir / "health.json", {"generated_at": fetch.iso(now), "feeds": health})
@@ -97,6 +113,7 @@ def run(data_dir: Path, outlets_path: Path, now: float | None = None, get=None,
         "translated": tstats["translated"],
         "translate_failed": tstats["failed_langs"],
         **{f"group_{k}": v for k, v in gstats.items()},
+        **{f"write_{k}": v for k, v in wstats.items()},
         **timings,
     }
     out = os.environ.get("GITHUB_STEP_SUMMARY")
