@@ -841,6 +841,42 @@
     "via_google_news": true
   },
   {
+    "id": "propublica",
+    "name": "ProPublica",
+    "feeds": [
+      "https://www.propublica.org/feeds/propublica/main",
+      "https://feeds.propublica.org/propublica/main"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_left",
+    "lean_source": "Media Bias/Fact Check",
+    "lean_source_url": "https://mediabiasfactcheck.com/propublica/",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
+    "id": "motherjones",
+    "name": "Mother Jones",
+    "feeds": [
+      "https://www.motherjones.com/feed/",
+      "https://www.motherjones.com/politics/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "left",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/node/1334636",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
+  },
+  {
     "id": "nationalreview",
     "name": "National Review",
     "feeds": [
