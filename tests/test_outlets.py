@@ -17,7 +17,7 @@ REQUIRED = {
     "language": str, "lean": str, "lean_source": str, "lean_source_url": str,
     "tags": list, "paywall": bool, "wire": bool, "enabled": bool,
 }
-OPTIONAL = {"via_google_news": bool}
+OPTIONAL = {"via_google_news": bool, "fetch_ua": str}
 
 
 @pytest.mark.parametrize("o", OUTLETS, ids=lambda o: o.get("id", "?"))
@@ -32,6 +32,7 @@ def test_schema(o):
     assert o["lean_source"] in {"AllSides", "Media Bias/Fact Check", "Ad Fontes"}
     assert o["lean_source_url"].startswith("https://")
     assert len(o["language"]) == 2 and len(o["country"]) == 2
+    assert o.get("fetch_ua", "bot") in {"bot", "browser"}
     assert o["feeds"], "at least one feed"
     assert all(f.startswith(("https://", "http://")) for f in o["feeds"])
 
@@ -58,6 +59,19 @@ def test_enabled_outlet_has_icon(o):
 
 def test_at_least_35_enabled():
     assert sum(o["enabled"] for o in OUTLETS) >= 35
+
+
+def test_no_region_one_sided():
+    """Phase 2 gate: every region with partisan outlets has both sides."""
+    by_region = {}
+    for o in OUTLETS:
+        if o["enabled"]:
+            by_region.setdefault(o["region"], Counter())[o["lean"]] += 1
+    for region, c in by_region.items():
+        left = c["left"] + c["lean_left"]
+        right = c["right"] + c["lean_right"]
+        if left or right:
+            assert left and right, f"{region} is one-sided: {left} left vs {right} right"
 
 
 def test_every_side_present_overall():

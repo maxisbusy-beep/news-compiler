@@ -87,6 +87,8 @@ site/
 - `region` is one of `us | europe | middle_east | asia | africa | americas | oceania | global`.
 - `tags` may include `"state_funded"` or `"public_broadcaster"`.
 - `wire: true` marks AP, Reuters and DW. Their headlines are the preferred fallback.
+- Optional `via_google_news: true` marks outlets whose feed is a Google News site search (no usable feed of their own). Their titles end in " - <Outlet>", which fetch strips, and their links go through a Google redirect.
+- Optional `fetch_ua: "browser"` marks feeds that only answer a browser user agent (approved at the Phase 2 gate; currently CBC).
 
 **`data/stories.json`** (what the app reads)
 
@@ -167,7 +169,8 @@ site/
 - score = distinct outlets × 0.5^(hours since updated / 6)
 
 **Fetching**
-- User-Agent: `NewsCompiler/1.0 (+https://maxisbusy-beep.github.io/news-compiler)`.
+- User-Agent: `NewsCompiler/1.0 (+https://maxisbusy-beep.github.io/news-compiler)`, except outlets with `fetch_ua: "browser"`, which get a standard browser user agent.
+- Publication times in the future are clamped to the fetch time (Jerusalem Post's feed runs ahead).
 - Send conditional GET headers. Timeout 15 seconds per feed. Retry once.
 - A failing feed never fails the run.
 

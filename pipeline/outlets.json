@@ -764,7 +764,7 @@
     "tags": [],
     "paywall": false,
     "wire": false,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "arabnews",
@@ -783,7 +783,7 @@
     ],
     "paywall": false,
     "wire": false,
-    "enabled": false,
+    "enabled": true,
     "via_google_news": true
   },
   {
@@ -801,7 +801,7 @@
     "tags": [],
     "paywall": false,
     "wire": false,
-    "enabled": false,
+    "enabled": true,
     "via_google_news": true
   },
   {
@@ -820,7 +820,7 @@
     "tags": [],
     "paywall": true,
     "wire": false,
-    "enabled": false
+    "enabled": true
   },
   {
     "id": "theaustralian",
@@ -837,8 +837,26 @@
     "tags": [],
     "paywall": true,
     "wire": false,
-    "enabled": false,
+    "enabled": true,
     "via_google_news": true
+  },
+  {
+    "id": "nationalreview",
+    "name": "National Review",
+    "feeds": [
+      "https://www.nationalreview.com/news/feed/",
+      "https://www.nationalreview.com/feed/"
+    ],
+    "region": "us",
+    "country": "US",
+    "language": "en",
+    "lean": "lean_right",
+    "lean_source": "AllSides",
+    "lean_source_url": "https://www.allsides.com/media-bias",
+    "tags": [],
+    "paywall": false,
+    "wire": false,
+    "enabled": true
   },
   {
     "id": "cbc",
@@ -858,6 +876,7 @@
     ],
     "paywall": false,
     "wire": false,
-    "enabled": false
+    "enabled": true,
+    "fetch_ua": "browser"
   }
 ]
