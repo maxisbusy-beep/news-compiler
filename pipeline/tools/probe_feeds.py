@@ -133,6 +133,8 @@ def fetch_icon(domain: str) -> tuple[bytes | None, str | None]:
     except requests.RequestException:
         pass
     candidates += [urljoin(base, "apple-touch-icon.png"), urljoin(base, "favicon.ico")]
+    # Last resort: Google's favicon service, fetched once here and stored in the repo.
+    candidates.append(f"https://www.google.com/s2/favicons?domain={domain}&sz=64")
     seen = set()
     for url in candidates:
         if url in seen or url.startswith("data:") or url.endswith(".svg"):
@@ -154,11 +156,11 @@ def main(cand_path: str, out_dir: str) -> int:
     os.makedirs(os.path.join(out_dir, "icons"), exist_ok=True)
     report = []
     for o in outlets:
-        tries = [probe_feed(u) for u in o["feeds"]]
+        tries = [probe_feed(u) for u in o.get("feeds", [])]
         working = [t for t in tries if t["ok"]]
         via_google = False
         if not working:
-            g = probe_feed(google_news_feed(o["domain"]))
+            g = probe_feed(google_news_feed(o.get("google_site", o["domain"])))
             tries.append(g)
             if g["ok"]:
                 working = [g]

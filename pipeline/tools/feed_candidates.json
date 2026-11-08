@@ -36,7 +36,7 @@
   {"id": "timesofindia", "domain": "timesofindia.indiatimes.com", "feeds": ["https://timesofindia.indiatimes.com/rssfeedstopstories.cms", "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"]},
   {"id": "thehindu", "domain": "thehindu.com", "feeds": ["https://www.thehindu.com/news/international/feeder/default.rss", "https://www.thehindu.com/news/national/feeder/default.rss", "https://www.thehindu.com/feeder/default.rss"]},
   {"id": "scmp", "domain": "scmp.com", "feeds": ["https://www.scmp.com/rss/91/feed", "https://www.scmp.com/rss/2/feed", "https://www.scmp.com/rss/4/feed"]},
-  {"id": "nhk", "domain": "www3.nhk.or.jp", "feeds": ["https://www3.nhk.or.jp/nhkworld/en/news/rss.xml", "https://www3.nhk.or.jp/rss/news/cat0.xml", "https://www3.nhk.or.jp/rss/news/cat6.xml"]},
+  {"id": "nhk", "domain": "www3.nhk.or.jp", "google_site": "www3.nhk.or.jp/nhkworld", "feeds": ["https://www3.nhk.or.jp/nhkworld/en/news/rss.xml", "https://www3.nhk.or.jp/rss/news/cat0.xml", "https://www3.nhk.or.jp/rss/news/cat6.xml"]},
   {"id": "abcau", "domain": "abc.net.au", "feeds": ["https://www.abc.net.au/news/feed/51120/rss.xml", "https://www.abc.net.au/news/feed/45910/rss.xml"]},
   {"id": "globeandmail", "domain": "theglobeandmail.com", "feeds": ["https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/", "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/"]},
   {"id": "kyivindependent", "domain": "kyivindependent.com", "feeds": ["https://kyivindependent.com/rss/", "https://kyivindependent.com/feed/"]},
