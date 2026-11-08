@@ -85,6 +85,17 @@ def new_story_id(item_ids: list[str]) -> str:
     return "s_" + hashlib.sha1(min(item_ids).encode()).hexdigest()[:12]
 
 
+def unique_story_id(item_ids: list[str], used: set[str]) -> str:
+    """A new ID that no current or previous story uses. A headline that moved
+    between clusters would otherwise hash to the ID its old story still has."""
+    sid = new_story_id(item_ids)
+    salt = 0
+    while sid in used:
+        salt += 1
+        sid = "s_" + hashlib.sha1(f"{min(item_ids)}#{salt}".encode()).hexdigest()[:12]
+    return sid
+
+
 def build_stories(items: list[dict], vectors: np.ndarray, prev_state: dict,
                   threshold: float = GROUP_THRESHOLD) -> tuple[list[dict], dict, dict]:
     """Returns (stories, new_state_part, stats).
@@ -114,17 +125,29 @@ def build_stories(items: list[dict], vectors: np.ndarray, prev_state: dict,
     taken: set[str] = set()
     stories, item_story = [], {}
     stats = {"stories": 0, "kept_by_items": 0, "kept_by_centroid": 0, "new": 0, "clusters": len(groups)}
-    for g in candidates:
+
+    # Pass 1: an old ID goes to the cluster holding the most of that old story's
+    # headlines (largest overlaps first), so a cluster with one stray headline
+    # can't take the ID from the cluster that carries the story on.
+    pairs = []
+    for ci, g in enumerate(candidates):
+        ids = [items[i]["id"] for i in g]
+        known = sum(1 for i in ids if i in prev_map)
+        for old, n in Counter(prev_map[i] for i in ids if i in prev_map).items():
+            if n * 2 >= known:
+                pairs.append((n, ci, old))
+    inherited: dict[int, str] = {}
+    for n, ci, old in sorted(pairs, key=lambda p: (-p[0], p[1])):
+        if ci not in inherited and old not in taken:
+            inherited[ci] = old
+            taken.add(old)
+
+    for ci, g in enumerate(candidates):
         ids = [items[i]["id"] for i in g]
         centroid = normalize(vectors[g].mean(axis=0))
-        sid = None
-        votes = Counter(prev_map[i] for i in ids if i in prev_map and prev_map[i] not in taken)
-        if votes:
-            best, n = votes.most_common(1)[0]
-            known = sum(1 for i in ids if i in prev_map)
-            if n * 2 >= known:
-                sid = best
-                stats["kept_by_items"] += 1
+        sid = inherited.get(ci)
+        if sid is not None:
+            stats["kept_by_items"] += 1
         if sid is None and prev_centroids is not None:
             sims = prev_centroids @ centroid
             for j in np.argsort(-sims):
@@ -134,8 +157,8 @@ def build_stories(items: list[dict], vectors: np.ndarray, prev_state: dict,
                     sid = prev_ids[j]
                     stats["kept_by_centroid"] += 1
                     break
-        if sid is None or sid in taken:
-            sid = new_story_id(ids)
+        if sid is None:
+            sid = unique_story_id(ids, taken | set(prev_stories))
             stats["new"] += 1
         taken.add(sid)
         first_seen = min(items[i]["first_seen"] for i in g)

@@ -102,6 +102,25 @@ def test_story_id_kept_by_centroid_when_items_all_replaced():
     assert s2[0]["id"] == budget_id and stats["kept_by_centroid"] == 1
 
 
+def test_story_ids_never_collide_when_headline_moves():
+    """Regression (Phase 5 gate run): a headline that seeded story X's ID moves to
+    a new cluster; the new cluster must not reuse X's ID while X lives on."""
+    its = base_items()
+    vecs = group.item_vectors(its, fake_embed, {})
+    s1, st1, _ = group.build_stories(its, vecs, {}, threshold=0.6)
+    storm = next(s for s in s1 if "i0" in s["item_ids"])
+    assert storm["id"] == group.new_story_id(storm["item_ids"])
+    # i0 now heads a separate cluster with a fresh outlet; the rest of the storm story stays put
+    moved = dict(its[0], title="Zoo giraffe celebrates birthday", title_en="Zoo giraffe celebrates birthday")
+    extra = item(50, "zz", "Zoo giraffe celebrates birthday"); extra["title_en"] = extra["title"]
+    its2 = [moved] + its[1:] + [extra]
+    vecs2 = group.item_vectors(its2, fake_embed, {})
+    s2, _, _ = group.build_stories(its2, vecs2, st1, threshold=0.6)
+    ids = [s["id"] for s in s2]
+    assert len(ids) == len(set(ids)), ids
+    assert next(s for s in s2 if "i1" in s["item_ids"])["id"] == storm["id"]
+
+
 def test_translated_items_use_both_texts():
     a = item(1, "a", "Erdbeben", "de"); a["title_en"] = "Earthquake"
     cache = {}
