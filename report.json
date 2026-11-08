@@ -1,0 +1,2341 @@
+[
+ {
+  "id": "ap",
+  "domain": "apnews.com",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:apnews.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://apnews.com/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://apnews.com/index.rss",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   },
+   {
+    "url": "https://apnews.com/hub/ap-top-news?output=rss",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:apnews.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 0.8,
+    "dated": 100,
+    "language": "en-US",
+    "title": "\"site:apnews.com when:2d\" - Google News",
+    "sample": [
+     "Scott Colom and Black Mississippians stand on the cusp of Senate history as vote count stretches on - AP News",
+     "Trump’s midterm drubbing adds to the populist right’s losses. France’s Le Pen could still win - AP News",
+     "With an ode to mate tea, pope urges faithful in Uruguay to build bridges of fraternity and faith - AP News"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "reuters",
+  "domain": "reuters.com",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:reuters.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://reuters.com/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.reuters.com/arc/outboundfeeds/v3/all/rss.xml",
+    "ok": false,
+    "status": 404,
+    "ua": "browser",
+    "error": "HTTP 404"
+   },
+   {
+    "url": "https://www.reuters.com/world/rss",
+    "ok": false,
+    "status": 401,
+    "ua": "browser",
+    "error": "HTTP 401"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:reuters.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 1.1,
+    "dated": 100,
+    "language": "en-US",
+    "title": "\"site:reuters.com when:2d\" - Google News",
+    "sample": [
+     "Trump says he is unlikely to order Iran attack if talks progress, CNN reports - Reuters",
+     "Netanyahu rival Eisenkot seeks 'wide' government but path to power uncertain - Reuters",
+     "Democrats plan probes of Musk, Miller, corporate America after midterm rout - Reuters"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "thehill",
+  "domain": "thehill.com",
+  "chosen": [
+   "https://thehill.com/feed/",
+   "https://thehill.com/news/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.google.com/s2/favicons?domain=thehill.com&sz=64",
+  "tries": [
+   {
+    "url": "https://thehill.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 0.4,
+    "dated": 100,
+    "language": "en-US",
+    "title": "The Hill News",
+    "sample": [
+     "El-Sayed open to working with Trump on affordable healthcare",
+     "El-Sayed on Miller: ‘Most broken man’ to run ‘the most dysfunctional White House’",
+     "Ukrainian nuclear plant switches to generators after losing final power line"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://thehill.com/news/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 15,
+    "newest_hours": 0.4,
+    "dated": 15,
+    "language": "en-US",
+    "title": "Just In News",
+    "sample": [
+     "El-Sayed open to working with Trump on affordable healthcare",
+     "El-Sayed on Miller: 'Most broken man' to run 'the most dysfunctional White House'",
+     "Ukrainian nuclear plant switches to generators after losing final power line"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "wsj",
+  "domain": "wsj.com",
+  "chosen": [
+   "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+   "https://feeds.content.dowjones.io/public/rss/RSSUSnews"
+  ],
+  "via_google_news": false,
+  "icon": "https://wsj.com/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSWorldNews",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 71,
+    "newest_hours": 1.7,
+    "dated": 71,
+    "language": "en-us",
+    "title": "WSJ.com: World News",
+    "sample": [
+     "A Missionary Pope Faces a Chain Saw-Wielding Populist in Argentina",
+     "Party That Defeated Apartheid Hits Electoral Setback in South Africa",
+     "Netanyahu Rival Gets First Run at Power, but Hurdles Lie in Wait"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 20,
+    "newest_hours": 15601.1,
+    "dated": 20,
+    "language": "en-us",
+    "title": "WSJ.com: World News",
+    "sample": [
+     "Palestinians Stream Back to Northern Gaza on Foot",
+     "Leading China Property Developer Reports Huge loss, in Sign of Widening Real-Estate Woes",
+     "Freed Israeli Hostages Still Had Shrapnel in Their Bodies From Oct. 7 Attack"
+    ],
+    "error": "20 items, newest 15601.1 h"
+   },
+   {
+    "url": "https://feeds.content.dowjones.io/public/rss/RSSUSnews",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 40,
+    "newest_hours": 1.9,
+    "dated": 40,
+    "language": "en-us",
+    "title": "WSJ.com : U.S. News",
+    "sample": [
+     "How a Former Democrat Became Trump’s Bulldog at the Justice Department",
+     "Cornell Faculty Rebuke President Over Response to Sex-Assault Allegations",
+     "Meghan Markle’s Father Arrested on Charges Related to Child Sexual Abuse Materials"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "newsnation",
+  "domain": "newsnationnow.com",
+  "chosen": [
+   "https://www.newsnationnow.com/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.google.com/s2/favicons?domain=newsnationnow.com&sz=64",
+  "tries": [
+   {
+    "url": "https://www.newsnationnow.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 15,
+    "newest_hours": 0.2,
+    "dated": 15,
+    "language": "en-US",
+    "title": "NewsNation",
+    "sample": [
+     "New Democratic senators call for leadership change as Schumer fights to stay on top",
+     "DoorDasher goes missing in Pennsylvania: Police",
+     "Iran dismisses US 'Iron Gate' effort aimed at cutting off weapons, trade routes"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "npr",
+  "domain": "npr.org",
+  "chosen": [
+   "https://feeds.npr.org/1001/rss.xml",
+   "https://feeds.npr.org/1004/rss.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://media.npr.org/chrome/favicon/favicon-180x180.png",
+  "tries": [
+   {
+    "url": "https://feeds.npr.org/1001/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 1.1,
+    "dated": 10,
+    "language": "en",
+    "title": "NPR Topics: News",
+    "sample": [
+     "Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections",
+     "No clear winner in New Zealand election, as leaders prepare for weeks of talks",
+     "After a successful trip to Uruguay, Pope Leo heads to Argentina"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.npr.org/1004/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 1.1,
+    "dated": 10,
+    "language": "en",
+    "title": "NPR Topics: World",
+    "sample": [
+     "Europe to join U.S.-brokered Ukraine talks in Abu Dhabi, defying Kremlin objections",
+     "No clear winner in New Zealand election, as leaders prepare for weeks of talks",
+     "After a successful trip to Uruguay, Pope Leo heads to Argentina"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "nyt",
+  "domain": "nytimes.com",
+  "chosen": [
+   "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+   "https://rss.nytimes.com/services/xml/rss/nyt/World.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://nytimes.com/favicon.ico",
+  "tries": [
+   {
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 13,
+    "newest_hours": 0.1,
+    "dated": 13,
+    "language": "en-us",
+    "title": "NYT > Top Stories",
+    "sample": [
+     "Nvidia Opens Investigation Into Jensen Huang’s Relationship With Chinese Spy",
+     "Rubio Warned Officials About Nvidia Chief’s Entanglement With Chinese Spy",
+     "Jeffries Backs Impeaching Hegseth as Democrats Push for Accountability"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 56,
+    "newest_hours": 0.7,
+    "dated": 56,
+    "language": "en-us",
+    "title": "NYT > World News",
+    "sample": [
+     "In Argentina, Pope Leo to Meet Church at Odds With President Milei",
+     "Trains Collide Near Cairo, Killing 4",
+     "What to Know About the Mass Shooting in Krakow, Poland"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "wapo",
+  "domain": "washingtonpost.com",
+  "chosen": [
+   "https://feeds.washingtonpost.com/rss/world",
+   "https://feeds.washingtonpost.com/rss/politics",
+   "https://feeds.washingtonpost.com/rss/national"
+  ],
+  "via_google_news": false,
+  "icon": "https://washingtonpost.com/favicon.ico",
+  "tries": [
+   {
+    "url": "https://feeds.washingtonpost.com/rss/world",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 11,
+    "newest_hours": 4.5,
+    "dated": 11,
+    "language": null,
+    "title": "World",
+    "sample": [
+     "U.S. offers $20 million reward for information on Iran nuclear program",
+     "A short guide to Diwali and those who celebrate it",
+     "Mass shooter kills six in Poland, and three bodies are found at suspect’s home"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.washingtonpost.com/rss/politics",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 34,
+    "newest_hours": 0.1,
+    "dated": 34,
+    "language": null,
+    "title": "Politics",
+    "sample": [
+     "Byron Donalds says it’s a ‘matter of pride’ to be Florida’s first Black governor",
+     "In rare GOP rebuke, congressman says Trump must ‘fire people’ — including Miller",
+     "Todd Blanche defends former White House chief of staff Susie Wiles"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.washingtonpost.com/rss/national",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 19,
+    "newest_hours": 1.3,
+    "dated": 19,
+    "language": null,
+    "title": "U.S. News",
+    "sample": [
+     "NASA opens recruitment for its next generation of astronauts",
+     "Dad arrested after leaving sleeping 6-year-old in line for Pokémon cards",
+     "The sister who blasted Madonna in a blue Camaro, and other lives we lost"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "cnn",
+  "domain": "cnn.com",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:cnn.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://www.cnn.com/media/sites/cnn/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "http://rss.cnn.com/rss/cnn_topstories.rss",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 69,
+    "newest_hours": 30885.5,
+    "dated": 53,
+    "language": "en-US",
+    "title": "CNN.com - RSS Channel - HP Hero",
+    "sample": [
+     "Some on-air claims about Dominion Voting Systems were false, Fox News acknowledges in statement after deal is announced",
+     "Dominion still has pending lawsuits against election deniers such as Rudy Giuliani and Sidney Powell",
+     "Here are the 20 specific Fox broadcasts and tweets Dominion says were defamatory"
+    ],
+    "error": "69 items, newest 30885.5 h"
+   },
+   {
+    "url": "http://rss.cnn.com/rss/edition.rss",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 50,
+    "newest_hours": 22637.1,
+    "dated": 46,
+    "language": "en-US",
+    "title": "CNN.com - RSS Channel - App International Edition",
+    "sample": [
+     "Trump pleads not guilty to 34 felony counts",
+     "Haberman reveals why Trump attacked judge and his family in speech",
+     "What to know about the Trump indictment on the eve of his court appearance"
+    ],
+    "error": "50 items, newest 22637.1 h"
+   },
+   {
+    "url": "http://rss.cnn.com/rss/cnn_latest.rss",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 30,
+    "newest_hours": 19400.7,
+    "dated": 30,
+    "language": "en-US",
+    "title": "CNN.com - RSS Channel",
+    "sample": [
+     "Today's news in 10 minutes",
+     "A mom with a license plate that reads 'PB4WEGO' wins a battle with the state to keep it",
+     "CNN Heroes Legal Disclosures 2024"
+    ],
+    "error": "30 items, newest 19400.7 h"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:cnn.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 2.9,
+    "dated": 100,
+    "language": "en-US",
+    "title": "\"site:cnn.com when:2d\" - Google News",
+    "sample": [
+     "Trump says renewed attacks on Iran “highly unlikely” if talks show progress - CNN",
+     "Bicycle ‘boycott ride’ targeting Jewish-owned businesses in Philadelphia draws hundreds of counterprotesters - CNN",
+     "MAHA makes its case to Democrats as blue wave crashes GOP alliance and threatens RFK Jr. - CNN"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "nbc",
+  "domain": "nbcnews.com",
+  "chosen": [
+   "https://feeds.nbcnews.com/nbcnews/public/news",
+   "https://feeds.nbcnews.com/nbcnews/public/world"
+  ],
+  "via_google_news": false,
+  "icon": "https://nodeassets.nbcnews.com/cdnassets/projects/ramen/favicon/nbcnews/all-other-sizes-PNG.ico/apple-icon.png",
+  "tries": [
+   {
+    "url": "https://feeds.nbcnews.com/nbcnews/public/news",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 1.2,
+    "dated": 25,
+    "language": "en-US",
+    "title": "NBC News Top Stories",
+    "sample": [
+     "Adam Hamilton says 'sense of common decency' fueled his historic campaign victory",
+     "Byron Donalds on DeSantis' midterm explanation: ‘I actually don't know what' he is talking about",
+     "Gov. Josh Shapiro urges Democrats to prioritize healthcare, food assistance"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.nbcnews.com/nbcnews/public/world",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 8.5,
+    "dated": 25,
+    "language": "en-US",
+    "title": "NBC News World News",
+    "sample": [
+     "Parents, sister of far-right Kraków shooter found dead in family home",
+     "At least six people killed after gunman opens fire in central square of Polish city of Krakow",
+     "Families in Gaza live surrounded by rubble and toxic waste"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "politico",
+  "domain": "politico.com",
+  "chosen": [
+   "https://rss.politico.com/politics-news.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.google.com/s2/favicons?domain=politico.com&sz=64",
+  "tries": [
+   {
+    "url": "https://rss.politico.com/politics-news.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 30,
+    "newest_hours": 5.5,
+    "dated": 30,
+    "language": "en-us",
+    "title": "Politics",
+    "sample": [
+     "How Hinojosa’s win in Texas could bite Beshear",
+     "Democratic thrashing redraws the map of state power",
+     "Why this GOP governor thinks his party got ‘worse than a butt whipping’ on Tuesday"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.politico.com/rss/politicopicks.xml",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   }
+  ]
+ },
+ {
+  "id": "huffpost",
+  "domain": "huffpost.com",
+  "chosen": [
+   "https://www.huffpost.com/section/politics/feed"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.huffpost.com/static-assets/cambria/app/favicon-new.ico",
+  "tries": [
+   {
+    "url": "https://www.huffpost.com/section/front-page/feed",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 0,
+    "newest_hours": null,
+    "dated": 0,
+    "language": "en-US",
+    "title": "Huffington Post",
+    "sample": [],
+    "error": "0 items, newest None h"
+   },
+   {
+    "url": "https://www.huffpost.com/section/politics/feed",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 50,
+    "newest_hours": 25.2,
+    "dated": 50,
+    "language": "en-US",
+    "title": "Politics",
+    "sample": [
+     "Trump Offers UFC President Dana White Press Secretary Position",
+     "Bill Maher Reacts To GOP Election Bloodbath: 'Don, Are You OK?'",
+     "Progressives Probably Can't Stop Chuck Schumer From Becoming Senate Majority Leader"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "msnbc",
+  "domain": "ms.now",
+  "chosen": [
+   "https://www.ms.now/rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.ms.now/wp-content/uploads/2025/10/cropped-msnow-logo-favicon.webp?w=180",
+  "tries": [
+   {
+    "url": "https://www.ms.now/feeds/latest",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 0,
+    "newest_hours": null,
+    "dated": 0,
+    "language": null,
+    "title": null,
+    "sample": [],
+    "error": "0 items, newest None h"
+   },
+   {
+    "url": "https://www.msnbc.com/feeds/latest",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 0,
+    "newest_hours": null,
+    "dated": 0,
+    "language": null,
+    "title": null,
+    "sample": [],
+    "error": "0 items, newest None h"
+   },
+   {
+    "url": "https://www.ms.now/rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 1.7,
+    "dated": 10,
+    "language": "en-US",
+    "title": "MS NOW",
+    "sample": [
+     "Todd Blanche threatens to prosecute lawmakers planning oversight probes",
+     "Trump administration moves to deport Iranians back to their war-torn country, group says",
+     "Israel’s president officially taps Eisenkot to form a government"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "nypost",
+  "domain": "nypost.com",
+  "chosen": [
+   "https://nypost.com/feed/",
+   "https://nypost.com/news/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://nypost.com/wp-content/themes/nypost/static/images/apple-icons/nypost/apple-icon.png",
+  "tries": [
+   {
+    "url": "https://nypost.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 24,
+    "newest_hours": 0.0,
+    "dated": 24,
+    "language": "en-US",
+    "title": "New York Post",
+    "sample": [
+     "El-Sayed blasted killing of Al-Qaeda terrorist US citizen in resurfaced article",
+     "Mom of ex-NYPD cop accused of jogger murder complains she ‘lost’ her son— and sends message to victim’s family",
+     "Taylor Swift’s Chiefs vs. Jets game-day outfit has a special connection to Travis Kelce"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://nypost.com/news/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 0.1,
+    "dated": 20,
+    "language": "en-US",
+    "title": "US News – Latest Breaking Headlines, Photos & Videos | New York Post",
+    "sample": [
+     "Mom of ex-NYPD cop accused of jogger murder complains she ‘lost’ her son— and sends message to victim’s family",
+     "California’s new insurance czar reveals massive overhaul to entire industry in the state: ‘No more’",
+     "Emotional new details emerge about lives saved with organs from tragic Brooklyn jogger Katie Suarez"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "washexaminer",
+  "domain": "washingtonexaminer.com",
+  "chosen": [
+   "https://www.washingtonexaminer.com/feed/",
+   "https://www.washingtonexaminer.com/section/news/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.washingtonexaminer.com/wp-content/uploads/2023/11/cropped-favicon.png?w=180",
+  "tries": [
+   {
+    "url": "https://www.washingtonexaminer.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 0.2,
+    "dated": 10,
+    "language": "en-US",
+    "title": "Washington Examiner",
+    "sample": [
+     "Collision between two trains in Egypt kills seven and injures more than 100",
+     "‘Fear and vitriol’: Democrats trash Stephen Miller as new Trump chief of staff",
+     "The future for pro-life Americans is far more consequential than the midterm elections"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.washingtonexaminer.com/section/news/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 0.4,
+    "dated": 10,
+    "language": "en-US",
+    "title": "News - Washington Examiner",
+    "sample": [
+     "‘Fear and vitriol’: Democrats trash Stephen Miller as new Trump chief of staff",
+     "Trump posts animated video of Dana White’s UFC staffers beating up press corps",
+     "Stephen Miller will thrive against ‘hostile media’ as chief of staff: Joe Concha"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "dispatch",
+  "domain": "thedispatch.com",
+  "chosen": [
+   "https://thedispatch.com/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://thedispatch.com/wp-content/uploads/2025/08/cropped-td_favicon.png?w=180",
+  "tries": [
+   {
+    "url": "https://thedispatch.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 8.5,
+    "dated": 10,
+    "language": "en-US",
+    "title": "The Dispatch",
+    "sample": [
+     "Neither Party Fully Understands the Black Church",
+     "What Now for MAGA Christianity?",
+     "Our Best Stuff From the ‘Bluenami’"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "foxnews",
+  "domain": "foxnews.com",
+  "chosen": [
+   "https://moxie.foxnews.com/google-publisher/latest.xml",
+   "https://moxie.foxnews.com/google-publisher/world.xml",
+   "https://feeds.foxnews.com/foxnews/latest"
+  ],
+  "via_google_news": false,
+  "icon": "https://static.foxnews.com/static/orion/styles/img/fox-news/favicons/apple-touch-icon-57x57.png",
+  "tries": [
+   {
+    "url": "https://moxie.foxnews.com/google-publisher/latest.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 0.6,
+    "dated": 25,
+    "language": "en-us",
+    "title": "Latest & Breaking News on Fox News",
+    "sample": [
+     "After GOP's brutal midterms, ‘Chuck Norris of Florida politics’ tells party to 'get up and fight'",
+     "Patrick Mahomes suffers apparent elbow injury on throwing arm but returns to face the New York Jets",
+     "George W Bush welcomes 27 veterans to his ranch for 16th annual Warrior Ride"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://moxie.foxnews.com/google-publisher/world.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 22.2,
+    "dated": 25,
+    "language": "en-us",
+    "title": "Latest World News on Fox News",
+    "sample": [
+     "Israeli president taps Netanyahu rival to form government as coalition battle looms",
+     "Paris agitators defy police orders, renew nationwide protests centered in Paris",
+     "Gunman opens fire from moving car in European tourist hot spot, leaving 6 dead and at least 15 wounded"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.foxnews.com/foxnews/latest",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 0.6,
+    "dated": 25,
+    "language": "en-us",
+    "title": "Latest & Breaking News on Fox News",
+    "sample": [
+     "After GOP's brutal midterms, ‘Chuck Norris of Florida politics’ tells party to 'get up and fight'",
+     "Patrick Mahomes suffers apparent elbow injury on throwing arm but returns to face the New York Jets",
+     "George W Bush welcomes 27 veterans to his ranch for 16th annual Warrior Ride"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "dailywire",
+  "domain": "dailywire.com",
+  "chosen": [
+   "https://www.dailywire.com/feeds/rss.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.google.com/s2/favicons?domain=dailywire.com&sz=64",
+  "tries": [
+   {
+    "url": "https://www.dailywire.com/feeds/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 50,
+    "newest_hours": 6.8,
+    "dated": 50,
+    "language": "en-us",
+    "title": "The Daily Wire - Breaking News, Videos & Podcasts",
+    "sample": [
+     "Dana White Responds To Trump’s White House Press Secretary Job Offer",
+     "The Verdict Is In On Republicans’ Redistricting Gambit",
+     "Did LSU Make The Wrong Hire? Social Media Lights Up Lane Kiffin After Blowout Loss"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "breitbart",
+  "domain": "breitbart.com",
+  "chosen": [
+   "https://feeds.feedburner.com/breitbart",
+   "https://www.breitbart.com/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.breitbart.com/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://feeds.feedburner.com/breitbart",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 48,
+    "newest_hours": 1.7,
+    "dated": 48,
+    "language": "en",
+    "title": "Breitbart News",
+    "sample": [
+     "Hakeem Jeffries: I'm a 'Hard Yes' on the Hegseth Impeachment Resolution",
+     "Dean: Dems Should Impeach Trump’s Cabinet Members First",
+     "WATCH -- Democrat Rep. Robert Garcia on Targeting Former Trump Officials: 'Maybe It's Because I'm Gay... Pettiness Is a "
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.breitbart.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 48,
+    "newest_hours": 1.7,
+    "dated": 48,
+    "language": "en",
+    "title": "Breitbart News",
+    "sample": [
+     "Hakeem Jeffries: I'm a 'Hard Yes' on the Hegseth Impeachment Resolution",
+     "Dean: Dems Should Impeach Trump’s Cabinet Members First",
+     "WATCH -- Democrat Rep. Robert Garcia on Targeting Former Trump Officials: 'Maybe It's Because I'm Gay... Pettiness Is a "
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "bbc",
+  "domain": "bbc.com",
+  "chosen": [
+   "https://feeds.bbci.co.uk/news/world/rss.xml",
+   "https://feeds.bbci.co.uk/news/rss.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://static.files.bbci.co.uk/bbcdotcom/web/20261103-153842-3889e7dacf-web-3.27.0-4/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 27,
+    "newest_hours": 0.5,
+    "dated": 27,
+    "language": "en-gb",
+    "title": "BBC News",
+    "sample": [
+     "Surgeon having lunch near Krakow shooting undoubtedly saved officer's life, colleague says",
+     "Seven dead and more than 100 injured after trains collide in Egypt",
+     "Homes and temples glow across India to mark Diwali"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 33,
+    "newest_hours": 0.2,
+    "dated": 33,
+    "language": "en-gb",
+    "title": "BBC News",
+    "sample": [
+     "Surgeon having lunch near Krakow shooting undoubtedly saved officer's life, colleague says",
+     "King leads solemn Remembrance Sunday service at Cenotaph",
+     "Seven dead and more than 100 injured after trains collide in Egypt"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "guardian",
+  "domain": "theguardian.com",
+  "chosen": [
+   "https://www.theguardian.com/world/rss",
+   "https://www.theguardian.com/international/rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://assets.guim.co.uk/static/frontend/icons/homescreen/apple-touch-icon-512.png",
+  "tries": [
+   {
+    "url": "https://www.theguardian.com/world/rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 45,
+    "newest_hours": 0.3,
+    "dated": 45,
+    "language": "en-gb",
+    "title": "World news | The Guardian",
+    "sample": [
+     "Collision of two trains in Egypt kills at least seven",
+     "How African philosophies inspired a new approach to staging film festivals in Manchester",
+     "Kenyan doomsday sect leader jailed for 200 years for murder of 190 children"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.theguardian.com/international/rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 114,
+    "newest_hours": 0.1,
+    "dated": 114,
+    "language": "en-gb",
+    "title": "The Guardian",
+    "sample": [
+     "‘I was in a darker place than I’d ever been. ECT was my only hope’: how Ted Scheinman finally broke through his depressi",
+     "Healthcare, tariffs – but not Trump impeachment: Democrats chart next two years of power",
+     "The efficiency trap: why optimising everything can backfire, badly"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "telegraph",
+  "domain": "telegraph.co.uk",
+  "chosen": [
+   "https://www.telegraph.co.uk/rss.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.telegraph.co.uk/etc.clientlibs/settings/wcm/designs/telegraph/core/clientlibs/core/resources/icons/apple-touch-icon-180x180.png",
+  "tries": [
+   {
+    "url": "https://www.telegraph.co.uk/news/rss.xml",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 120,
+    "newest_hours": 938.6,
+    "dated": 120,
+    "language": "en-GB",
+    "title": "News",
+    "sample": [
+     "Esther Rantzen dies aged 86",
+     "Girl, 3, found dead at Surrey home",
+     "Counter-terror police investigating ‘Iran-backed firebombing’"
+    ],
+    "error": "120 items, newest 938.6 h"
+   },
+   {
+    "url": "https://www.telegraph.co.uk/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 120,
+    "newest_hours": 0.9,
+    "dated": 120,
+    "language": "en-GB",
+    "title": "www.telegraph.co.uk for the latest news from the UK and around the world.",
+    "sample": [
+     "Man Utd pull off another chaotic comeback but Carrick’s job hangs by a thread",
+     "Energised England deliver statement win to take heat off Borthwick",
+     "Xabi Alonso disgusted after Chelsea bullied by Brobbey and Sunderland"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "dailymail",
+  "domain": "dailymail.co.uk",
+  "chosen": [
+   "https://www.dailymail.co.uk/news/index.rss",
+   "https://www.dailymail.co.uk/articles.rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.dailymail.com/static/icons/180.png",
+  "tries": [
+   {
+    "url": "https://www.dailymail.co.uk/news/index.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 150,
+    "newest_hours": 0.0,
+    "dated": 150,
+    "language": "en-gb",
+    "title": "News | Mail Online",
+    "sample": [
+     "Two British tourists found dead in hotel in Morocco as probe launched into tragic discovery",
+     "Furious woke mob turns on SNL after Colin Jost's unorthodox Islamic joke about Abdul El-Sayed and Barack Obama",
+     "Prince Harry quietly attends memorial service in small town while his father and brother are joined by Kate and Camilla "
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.dailymail.co.uk/articles.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 122,
+    "newest_hours": 0.1,
+    "dated": 122,
+    "language": "en-gb",
+    "title": "Articles | Mail Online",
+    "sample": [
+     "Police release CCTV in search for missing bride-to-be, 29, who vanished 12 days ago",
+     "Sikh Federation accuses Home Office of 'inappropriatley targeting' the kirpan to 'deflect from police failings' in Henry",
+     "Taylor Swift and Karlie Kloss reunite again! Former BFFs watch singer's husband Travis Kelce play football"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "dw",
+  "domain": "dw.com",
+  "chosen": [
+   "https://rss.dw.com/rdf/rss-en-all",
+   "https://rss.dw.com/rdf/rss-en-top",
+   "https://rss.dw.com/xml/rss-en-all"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.dw.com/images/icons/favicon-120x120.png",
+  "tries": [
+   {
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 117,
+    "newest_hours": 0.8,
+    "dated": 117,
+    "language": null,
+    "title": "Deutsche Welle",
+    "sample": [
+     "Germany news: Merz to nominate Aigner for president",
+     "Dozens killed after migrant boat sinks off Senegal",
+     "South Africa elections: ANC marks its worst-ever performance"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://rss.dw.com/rdf/rss-en-top",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 21,
+    "newest_hours": 0.8,
+    "dated": 21,
+    "language": null,
+    "title": "Deutsche Welle: DW.com - Top Stories",
+    "sample": [
+     "Germany news: Merz to nominate Aigner for president",
+     "Dozens killed after migrant boat sinks off Senegal",
+     "South Africa elections: ANC marks its worst-ever performance"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://rss.dw.com/xml/rss-en-all",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 117,
+    "newest_hours": 0.8,
+    "dated": 117,
+    "language": "en",
+    "title": "Deutsche Welle",
+    "sample": [
+     "Germany news: Merz to nominate Aigner for president",
+     "Dozens killed after migrant boat sinks off Senegal",
+     "South Africa elections: ANC marks its worst-ever performance"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "tagesschau",
+  "domain": "tagesschau.de",
+  "chosen": [
+   "https://www.tagesschau.de/index~rss2.xml",
+   "https://www.tagesschau.de/xml/rss2"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.tagesschau.de:443/resources/assets/image/favicon/apple-icon-57x57.png",
+  "tries": [
+   {
+    "url": "https://www.tagesschau.de/index~rss2.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 67,
+    "newest_hours": 0.3,
+    "dated": 67,
+    "language": "de",
+    "title": "tagesschau.de - die erste Adresse für Nachrichten und Information",
+    "sample": [
+     "Kanzler Merz will Aigner als Bundespräsidentin vorschlagen",
+     "tagesschau 20:00 Uhr",
+     "Kanzler Merz will Aigner als Bundespräsidentin"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.tagesschau.de/xml/rss2",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 40,
+    "newest_hours": 0.3,
+    "dated": 40,
+    "language": "de",
+    "title": "tagesschau.de - Die Nachrichten der ARD",
+    "sample": [
+     "Überschwemmungen in Gaza schüren Sorge vor neuer Katastrophe",
+     "Kanzler Merz will Aigner als Bundespräsidentin vorschlagen",
+     "Chef der Jungen Union: \"Junge Generation wird von der Politik vernachlässigt\""
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "spiegel",
+  "domain": "spiegel.de",
+  "chosen": [
+   "https://www.spiegel.de/schlagzeilen/index.rss",
+   "https://www.spiegel.de/index.rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://cdn.prod.www.spiegel.de/public/spon/images/icons/touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.spiegel.de/schlagzeilen/index.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 30,
+    "newest_hours": 0.5,
+    "dated": 30,
+    "language": "de",
+    "title": "DER SPIEGEL - Schlagzeilen",
+    "sample": [
+     "Formel 1: Lando Norris siegt in São Paulo, Mercedes jubelt über Team-WM",
+     "Gazastreifen: Zelte versinken im Wasser – Vertriebene ohne Schutz",
+     "Warum Pilze für das Leben auf der Erde unverzichtbar sind"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.spiegel.de/index.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 39,
+    "newest_hours": 0.5,
+    "dated": 39,
+    "language": "de",
+    "title": "DER SPIEGEL - Nachrichten",
+    "sample": [
+     "NSDAP-Kartei: Sie wollen mit der Nazi-Kartei chatten? Probieren Sie es hier aus",
+     "Ilse Aigner: Im CDU-Präsidium dürfte Friedrich Merz ihre Nominierung als Bundespräsidentin verkünden",
+     "Hape Kerkeling oder Ilse Aigner? Komiker dankt seinen Anhängern"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "faz",
+  "domain": "faz.net",
+  "chosen": [
+   "https://www.faz.net/rss/aktuell/",
+   "https://www.faz.net/rss/aktuell/politik/"
+  ],
+  "via_google_news": false,
+  "icon": "https://faz.net/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.faz.net/rss/aktuell/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 163,
+    "newest_hours": 0.3,
+    "dated": 163,
+    "language": "de-de",
+    "title": "Aktuell - FAZ.NET",
+    "sample": [
+     "Nordkorea: Die kriminelle Cybermacht",
+     "Deutschland Liveblog: Friedrich Merz schlägt Ilse Aigner als Bundespräsidentin vor",
+     "Staatsoberhaupt: Das Warten und die Würde des Amtes"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.faz.net/rss/aktuell/politik/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 48,
+    "newest_hours": 0.3,
+    "dated": 48,
+    "language": "de-de",
+    "title": "Politik - FAZ.NET",
+    "sample": [
+     "Nordkorea: Die kriminelle Cybermacht",
+     "Trumps Debakel: Der Tag, an dem der Führerkult endete",
+     "Midterms 2026: So deutlich fällt der Sieg der Demokraten aus"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "welt",
+  "domain": "welt.de",
+  "chosen": [
+   "https://www.welt.de/feeds/latest.rss",
+   "https://www.welt.de/feeds/topnews.rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.welt.de/favicon-76.png",
+  "tries": [
+   {
+    "url": "https://www.welt.de/feeds/latest.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 30,
+    "newest_hours": 0.5,
+    "dated": 30,
+    "language": "de",
+    "title": "Nachrichten - WELT",
+    "sample": [
+     "CDU/CSU-Fraktionschefs fordern von Merz Stromsteuersenkung für alle und umfassende Sozialreformen",
+     "Ilse Aigner soll Bundespräsidentin werden – Linke schimpft über „parteipolitischen Wanderpokal“",
+     "Brantner spricht über Angst von Frauen – CDU-Politiker wirft Grünen-Chefin „Verlogenheit“ vor"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.welt.de/feeds/topnews.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 21,
+    "newest_hours": 0.5,
+    "dated": 21,
+    "language": "de",
+    "title": "TOPNEWS - WELT",
+    "sample": [
+     "CDU/CSU-Fraktionschefs fordern von Merz Stromsteuersenkung für alle und umfassende Sozialreformen",
+     "Ilse Aigner soll Bundespräsidentin werden – Linke schimpft über „parteipolitischen Wanderpokal“",
+     "Brantner spricht über Angst von Frauen – CDU-Politiker wirft Grünen-Chefin „Verlogenheit“ vor"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "france24",
+  "domain": "france24.com",
+  "chosen": [
+   "https://www.france24.com/en/rss",
+   "https://www.france24.com/en/world/rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://france24.com/favicon.ico",
+  "tries": [
+   {
+    "url": "https://www.france24.com/en/rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 24,
+    "newest_hours": 3.5,
+    "dated": 24,
+    "language": "en",
+    "title": "France 24 - International breaking news, top stories and headlines",
+    "sample": [
+     "Ukraine: Russian strikes leave hundreds of thousands without power",
+     "Gadi Eisenkot receives mandate to form government",
+     "Spain's Alcaraz beats error-prone Shelton to win Paris Masters for first time"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.france24.com/en/world/rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 24,
+    "newest_hours": 3.5,
+    "dated": 24,
+    "language": "en",
+    "title": "France 24 - International breaking news, top stories and headlines",
+    "sample": [
+     "Ukraine: Russian strikes leave hundreds of thousands without power",
+     "Gadi Eisenkot receives mandate to form government",
+     "Spain's Alcaraz beats error-prone Shelton to win Paris Masters for first time"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "lemonde",
+  "domain": "lemonde.fr",
+  "chosen": [
+   "https://www.lemonde.fr/rss/une.xml",
+   "https://www.lemonde.fr/international/rss_full.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.lemonde.fr/bucket/resources/front/static/img/logos/pwa-180.png",
+  "tries": [
+   {
+    "url": "https://www.lemonde.fr/rss/une.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 16,
+    "newest_hours": 1.1,
+    "dated": 16,
+    "language": "fr",
+    "title": "Le Monde.fr - Actualités et Infos en France et dans le monde",
+    "sample": [
+     "En Turquie, la COP31 vise à remettre le climat en haut de l’agenda, dans un monde percuté par les crises",
+     "La contestation contre les data centers monte en Europe",
+     "Le ministre de la justice américain, Todd Blanche, prêt à défendre les membres de l’administration Trump visés par des e"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.lemonde.fr/international/rss_full.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 1.2,
+    "dated": 20,
+    "language": "fr",
+    "title": "International : Toute l’actualité sur Le Monde.fr.",
+    "sample": [
+     "Italie : le ministre des affaires étrangères visé par une cyberattaque, Giorgia Meloni dénonce des « hackers prorusses »",
+     "Sénégal : au moins 34 morts dans le naufrage d’une pirogue de migrants",
+     "Municipales en Afrique du Sud : l’ANC, parti dominant depuis la fin de l’apartheid, enregistre le pire score de son hist"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "lefigaro",
+  "domain": "lefigaro.fr",
+  "chosen": [
+   "https://www.lefigaro.fr/rss/figaro_actualites.xml",
+   "https://www.lefigaro.fr/rss/figaro_international.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.lefigaro.fr/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.lefigaro.fr/rss/figaro_actualites.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 19,
+    "newest_hours": 0.0,
+    "dated": 19,
+    "language": "fr",
+    "title": "Le Figaro - Actualité en direct et informations en continu",
+    "sample": [
+     "États-Unis : face à Donald Trump, les démocrates en ordre de bataille pour la présidentielle 2028",
+     "L’éditorial de Philippe Gélie : «Donald Trump, M. Muscle à la Maison-Blanche»",
+     "«Sa faiblesse, c’était sa gentillesse» : ce que l’on sait du meurtre barbare de Jimmy, égorgé dans son appartement à Par"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.lefigaro.fr/rss/figaro_international.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 0.4,
+    "dated": 20,
+    "language": "fr",
+    "title": "Le Figaro - International : Actualité internationale en direct",
+    "sample": [
+     "États-Unis : face à Donald Trump, les démocrates en ordre de bataille pour la présidentielle 2028",
+     "« Je trouverai un moyen de vous faire venir » : sous le mur de Berlin, ces tunnels par lesquels des centaines d’habitant",
+     "«Nous n’avions jamais connu d’actes de terrorisme aussi brutaux» : la Pologne sous le choc après une fusillade meurtrièr"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "aljazeera",
+  "domain": "aljazeera.com",
+  "chosen": [
+   "https://www.aljazeera.com/xml/rss/all.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.aljazeera.com:443/favicon_aje.ico",
+  "tries": [
+   {
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 1.1,
+    "dated": 25,
+    "language": "en",
+    "title": "Al Jazeera – Breaking News, World News and Video from Al Jazeera",
+    "sample": [
+     "Al Jazeera tries Baseball5 at Youth Olympics",
+     "Man United earn 4-4 draw against Aston Villa but remain in relegation zone",
+     "After the midterms, where does the Republican Party stand?"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "timesofisrael",
+  "domain": "timesofisrael.com",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:timesofisrael.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://timesofisrael.com/favicon.ico",
+  "tries": [
+   {
+    "url": "https://www.timesofisrael.com/feed/",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:timesofisrael.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 2.0,
+    "dated": 100,
+    "language": "en-US",
+    "title": "\"site:timesofisrael.com when:2d\" - Google News",
+    "sample": [
+     "Report: PM, Mossad chief planned Iran op just before Israeli election; it was thwarted after US was accidentally tipped ",
+     "Iran says 3 tankers caught fire in Hormuz - The Times of Israel",
+     "Iranian state media reports explosions on island in Strait of Hormuz - The Times of Israel"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "haaretz",
+  "domain": "haaretz.com",
+  "chosen": [
+   "https://www.haaretz.com/srv/haaretz-latest-headlines"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.haaretz.com/v2/hdc-bucket/static/favicon.ico",
+  "tries": [
+   {
+    "url": "https://www.haaretz.com/srv/haaretz-latest-headlines",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 0.8,
+    "dated": 100,
+    "language": "en",
+    "title": "Haaretz latest headlines",
+    "sample": [
+     "Shin Bet questioning of Arab journalist focused on political views, source says",
+     "28 days to replace Netanyahu: Can Eisenkot form Israel's next government?",
+     "France's far-left presidential hopeful Mélenchon suggests he will send French ships to escort Gaza flotillas"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.haaretz.com/cmlink/1.628752",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 0,
+    "newest_hours": null,
+    "dated": 0,
+    "language": null,
+    "title": null,
+    "sample": [],
+    "error": "0 items, newest None h"
+   }
+  ]
+ },
+ {
+  "id": "timesofindia",
+  "domain": "timesofindia.indiatimes.com",
+  "chosen": [
+   "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+   "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms"
+  ],
+  "via_google_news": false,
+  "icon": "https://m.timesofindia.com/touch-icon-iphone-precomposed.png",
+  "tries": [
+   {
+    "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 47,
+    "newest_hours": 1.0,
+    "dated": 47,
+    "language": "en-gb",
+    "title": "Times of India",
+    "sample": [
+     "The great White mix-up: Did Trump offer White House job to the wrong Dana?",
+     "‘They’re a failing nation’: Trump says fresh Iran strikes ‘highly unlikely’",
+     "Is Netanyahu's time up? 10 things to know as rival Eisenkot gets shot at power"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 1.1,
+    "dated": 20,
+    "language": "en-gb",
+    "title": "World News, Today World News, Latest International News, World Breaking News, Trending News of World - Times of India",
+    "sample": [
+     "Josh Duhamel and Bobcat donate utility vehicle to Los Angeles firefighters",
+     "2,800-year-old Siberian tomb reveals 1,000 cannabis seeds and evidence of ritual intoxication",
+     "New Mexico artist gives a 1953 Chevy Bel Air a second life as a jackrabbit"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "thehindu",
+  "domain": "thehindu.com",
+  "chosen": [
+   "https://www.thehindu.com/news/international/feeder/default.rss",
+   "https://www.thehindu.com/news/national/feeder/default.rss",
+   "https://www.thehindu.com/feeder/default.rss"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.thehindu.com/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.thehindu.com/news/international/feeder/default.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 60,
+    "newest_hours": 1.3,
+    "dated": 60,
+    "language": "en-US",
+    "title": "World News: Latest International News & Updates | The Hindu",
+    "sample": [
+     "19 Indian seafarers stranded in Yemen evacuated, Embassy says",
+     "Tens of thousands march in Amsterdam, pressing Dutch government on Gaza, Israel",
+     "Democrats eye Musk, Miller probes after midterm rout"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.thehindu.com/news/national/feeder/default.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 60,
+    "newest_hours": 1.0,
+    "dated": 60,
+    "language": "en-US",
+    "title": "India Latest News: Top National Headlines Today & Breaking News | The Hindu",
+    "sample": [
+     "Air pollution over 50 times WHO limit in parts of Delhi as people defy ban on firecrackers on Deepavali",
+     "19 Indian seafarers stranded in Yemen evacuated, Embassy says",
+     "Thick smog blankets Delhi on Deepavali night, AQI at 20 stations ‘severe’"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.thehindu.com/feeder/default.rss",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 60,
+    "newest_hours": 0.7,
+    "dated": 60,
+    "language": "en-US",
+    "title": "The Hindu: Latest News today from India and the World, Breaking news, Top Headlines and Trending News Videos.",
+    "sample": [
+     "Chennai Open tennis: Singles final postponed due to rain, unhealthy air quality",
+     "Air pollution over 50 times WHO limit in parts of Delhi as people defy ban on firecrackers on Deepavali",
+     "19 Indian seafarers stranded in Yemen evacuated, Embassy says"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "scmp",
+  "domain": "scmp.com",
+  "chosen": [
+   "https://www.scmp.com/rss/91/feed",
+   "https://www.scmp.com/rss/2/feed",
+   "https://www.scmp.com/rss/4/feed"
+  ],
+  "via_google_news": false,
+  "icon": "https://assets-v2.i-scmp.com/production/icons/scmp-icon-192x192.png",
+  "tries": [
+   {
+    "url": "https://www.scmp.com/rss/91/feed",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 50,
+    "newest_hours": 0.4,
+    "dated": 50,
+    "language": "en",
+    "title": "News - South China Morning Post",
+    "sample": [
+     "King Charles and Prince Harry mark Remembrance Day separately",
+     "Police make arrest in deadly shooting at North Carolina university",
+     "Media industry still has a problem with sexual abuse, UK culture minister says"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.scmp.com/rss/2/feed",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 50,
+    "newest_hours": 6.5,
+    "dated": 50,
+    "language": "en",
+    "title": "Hong Kong - South China Morning Post",
+    "sample": [
+     "Hong Kong’s top drama school to stage entrance as university town expands campus",
+     "Defects at Hong Kong MTR station ‘unimaginable’, engineers and lawmakers say",
+     "‘Can’t be inaccurate’: how 2 tiny robot arms could halve digestive cancer surgery time"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.scmp.com/rss/4/feed",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 50,
+    "newest_hours": 5.5,
+    "dated": 50,
+    "language": "en",
+    "title": "China - South China Morning Post",
+    "sample": [
+     "Will China’s slow and steady moon landing plan be a safer bet than the US’?",
+     "The US must stop blaming China for problems at home: former envoy Cui Tiankai",
+     "China orders statistics bureau to fight fake data with modern technology"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "nhk",
+  "domain": "www3.nhk.or.jp",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:www3.nhk.or.jp/nhkworld+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://www3.nhk.or.jp/favicon.ico",
+  "tries": [
+   {
+    "url": "https://www3.nhk.or.jp/nhkworld/en/news/rss.xml",
+    "ok": false,
+    "status": 404,
+    "ua": "browser",
+    "error": "HTTP 404"
+   },
+   {
+    "url": "https://www3.nhk.or.jp/rss/news/cat0.xml",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 7,
+    "newest_hours": 2214.2,
+    "dated": 7,
+    "language": null,
+    "title": "NHKニュース",
+    "sample": [
+     "台風13号 影響は長時間続く 警戒を 台風15号の動きは?",
+     "北日本と東日本中心 9日も大気の状態が非常に不安定の見込み",
+     "愛知県内で水難事故相次ぐ 2人死亡"
+    ],
+    "error": "7 items, newest 2214.2 h"
+   },
+   {
+    "url": "https://www3.nhk.or.jp/rss/news/cat6.xml",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 98,
+    "newest_hours": 2216.6,
+    "dated": 98,
+    "language": null,
+    "title": "NHKニュース|国際",
+    "sample": [
+     "イチローさん マリナーズOBのホームラン競争でファンわかせる",
+     "【動画】中国 北京で人気のレトロ写真館",
+     "「韓国サッカー協会が外国人審判員に性的接待」韓国メディア"
+    ],
+    "error": "98 items, newest 2216.6 h"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:www3.nhk.or.jp/nhkworld+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 35,
+    "newest_hours": 0.4,
+    "dated": 35,
+    "language": "en-US",
+    "title": "\"site:www3.nhk.or.jp/nhkworld when:2d\" - Google News",
+    "sample": [
+     "Magnitude 5.7 earthquake strikes central Japan | NHK WORLD-JAPAN News - NHKニュース",
+     "California governor commutes over 500 death sentences | NHK WORLD-JAPAN News - NHKニュース",
+     "Japanese man jailed in China to be freed in December | NHK WORLD-JAPAN News - NHKニュース"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "abcau",
+  "domain": "abc.net.au",
+  "chosen": [
+   "https://www.abc.net.au/news/feed/51120/rss.xml",
+   "https://www.abc.net.au/news/feed/45910/rss.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.abc.net.au/news-assets/touchicon-abc.png",
+  "tries": [
+   {
+    "url": "https://www.abc.net.au/news/feed/51120/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 0.1,
+    "dated": 25,
+    "language": "en-AU",
+    "title": "Just In",
+    "sample": [
+     "Poland treats fatal mass shooting as 'terrorist offence'",
+     "NSW prisoners made more than 32,000 complaints in past year",
+     "Victoria's Big Build royal commission explained"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.abc.net.au/news/feed/45910/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 25,
+    "newest_hours": 0.4,
+    "dated": 25,
+    "language": "en-AU",
+    "title": "Top Stories",
+    "sample": [
+     "Police officer’s suicide exposes sexism, bullying in the force",
+     "This is what a weekly shop looks like for seven households in 2026",
+     "It could be a matter of when, not if, Andrew Hastie becomes opposition leader"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "globeandmail",
+  "domain": "theglobeandmail.com",
+  "chosen": [
+   "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/",
+   "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.theglobeandmail.com/pf/resources/assets/meta/apple-touch-icon.png?d=988",
+  "tries": [
+   {
+    "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 0.2,
+    "dated": 100,
+    "language": "en-ca",
+    "title": "The Globe and Mail",
+    "sample": [
+     "Five ways the midterm election results could reshape Donald Trump’s America",
+     "At least 21 dead as boat carrying migrants sinks off Senegal coast, authorities say",
+     "Poland mourns victims of mass shooting in Krakow"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/canada/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 3.3,
+    "dated": 100,
+    "language": "en-ca",
+    "title": "The Globe and Mail",
+    "sample": [
+     "North Vancouver woman rescued after being swept into creek during B.C. storm",
+     "Does anybody really know what time it is?",
+     "Ontario officials warn of possible measles exposure at Pearson airport"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "kyivindependent",
+  "domain": "kyivindependent.com",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:kyivindependent.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://kyivindependent.com/assets/images/favicon.ico",
+  "tries": [
+   {
+    "url": "https://kyivindependent.com/rss/",
+    "ok": false,
+    "status": 404,
+    "ua": "browser",
+    "error": "HTTP 404"
+   },
+   {
+    "url": "https://kyivindependent.com/feed/",
+    "ok": false,
+    "status": 404,
+    "ua": "browser",
+    "error": "HTTP 404"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:kyivindependent.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 58,
+    "newest_hours": 1.8,
+    "dated": 58,
+    "language": "en-US",
+    "title": "\"site:kyivindependent.com when:2d\" - Google News",
+    "sample": [
+     "Ukrainian drones hit key bridge, power stations in Russia's Rostov Oblast, governor says - The Kyiv Independent",
+     "Russia to replace Norway in ice hockey championship as more countries vow to boycott games - The Kyiv Independent",
+     "100 years ago, Kyiv's young writers sought artistic freedom. Stalin's purges cut their experiment short - The Kyiv Indep"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "jpost",
+  "domain": "jpost.com",
+  "chosen": [
+   "https://www.jpost.com/rss/rssfeedsfrontpage.aspx"
+  ],
+  "via_google_news": false,
+  "icon": "https://images.jpost.com/image/upload/f_auto,fl_lossy/Icons/PNG/jp-favicon-180.png",
+  "tries": [
+   {
+    "url": "https://www.jpost.com/rss/rssfeedsheadlines.aspx",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 30,
+    "newest_hours": 12243.9,
+    "dated": 30,
+    "language": null,
+    "title": "JPost.com - Breaking News | The Jerusalem Post",
+    "sample": [
+     "IDF issues evacuation order for Tehran ahead of strikes",
+     "Defense Ministry to conduct exercise on Highway 35 on Sunday afternoon",
+     "Ukrainian drone attack on Moscow forces airport closure, Russia says"
+    ],
+    "error": "30 items, newest 12243.9 h"
+   },
+   {
+    "url": "https://www.jpost.com/rss/rssfeedsfrontpage.aspx",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 26,
+    "newest_hours": -0.5,
+    "dated": 26,
+    "language": null,
+    "title": "JPost.com - The Jerusalem Post - All News from the Middle East, Israel, and the Jewish World",
+    "sample": [
+     "Defense establishment shocked by Trump's Israel aid cut off, details unclear, sources tell 'Post'",
+     "Great battles return between Mossad, IDF over Iran, sources tell 'Post'",
+     "UNRWA could lay off thousands as Trump’s Board of Peace prepares for post-agency Gaza - report"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "arabnews",
+  "domain": "arabnews.com",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:arabnews.com+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://arabnews.com/favicon.ico",
+  "tries": [
+   {
+    "url": "https://www.arabnews.com/rss.xml",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   },
+   {
+    "url": "https://www.arabnews.com/cat/1/rss.xml",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:arabnews.com+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 0.6,
+    "dated": 100,
+    "language": "en-US",
+    "title": "\"site:arabnews.com when:2d\" - Google News",
+    "sample": [
+     "Israeli president picks Gadi Eisenkot, Netanyahu rival, to form government - Arab News",
+     "Syria denies plans to send troops to Yemen - Arab News",
+     "US military offers $20 million reward for information on ‘Iran’s nuclear program’ - Arab News"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "japannews",
+  "domain": "japannews.yomiuri.co.jp",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:japannews.yomiuri.co.jp+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://www.google.com/s2/favicons?domain=japannews.yomiuri.co.jp&sz=64",
+  "tries": [
+   {
+    "url": "https://japannews.yomiuri.co.jp/feed/",
+    "ok": false,
+    "status": 202,
+    "ua": "browser",
+    "error": "HTTP 202"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:japannews.yomiuri.co.jp+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 10.9,
+    "dated": 10,
+    "language": "en-US",
+    "title": "\"site:japannews.yomiuri.co.jp when:2d\" - Google News",
+    "sample": [
+     "ECB’s Lagarde Cites French Presidential Race as Reason for Resignation in 1st Interview Since Announcement - The Japan N",
+     "Possible New Dwarf Planet Identified Orbiting beyond Pluto - The Japan News",
+     "Shinkansen Services Delayed After Strong Earthquake Hits Central Japan; At Least 24 Injured in Aichi Pref. - The Japan N"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "straitstimes",
+  "domain": "straitstimes.com",
+  "chosen": [
+   "https://www.straitstimes.com/news/world/rss.xml",
+   "https://www.straitstimes.com/news/asia/rss.xml"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.straitstimes.com/favicon.ico",
+  "tries": [
+   {
+    "url": "https://www.straitstimes.com/news/world/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 50,
+    "newest_hours": 0.1,
+    "dated": 50,
+    "language": "en",
+    "title": "The Straits Times World News",
+    "sample": [
+     "Trump says resumption of war with Iran ‘highly unlikely’",
+     "Krakow assailant appeared highly skilled, fellow shooting club member says",
+     "US asks Iraq to shut most Iran border crossings, Iraqi foreign minister says"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.straitstimes.com/news/asia/rss.xml",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 46,
+    "newest_hours": 3.5,
+    "dated": 46,
+    "language": "en",
+    "title": "The Straits Times World News",
+    "sample": [
+     "G7 ministers to discuss recent cyber attacks, Italy says",
+     "Crash of Indonesian water-bombing helicopter kills crew member",
+     "Philippines rebukes officials over public comments about China"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "theaustralian",
+  "domain": "theaustralian.com.au",
+  "chosen": [
+   "https://news.google.com/rss/search?q=site:theaustralian.com.au+when:2d&hl=en-US&gl=US&ceid=US:en"
+  ],
+  "via_google_news": true,
+  "icon": "https://www.google.com/s2/favicons?domain=theaustralian.com.au&sz=64",
+  "tries": [
+   {
+    "url": "https://www.theaustralian.com.au/feed",
+    "ok": false,
+    "status": 403,
+    "ua": "browser",
+    "error": "HTTP 403"
+   },
+   {
+    "url": "https://www.theaustralian.com.au/nation/rss",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 0,
+    "newest_hours": null,
+    "dated": 0,
+    "language": null,
+    "title": null,
+    "sample": [],
+    "error": "0 items, newest None h"
+   },
+   {
+    "url": "https://news.google.com/rss/search?q=site:theaustralian.com.au+when:2d&hl=en-US&gl=US&ceid=US:en",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 100,
+    "newest_hours": 1.1,
+    "dated": 100,
+    "language": "en-US",
+    "title": "\"site:theaustralian.com.au when:2d\" - Google News",
+    "sample": [
+     "‘Gone to ground’: Ten pursues Lehrmann for $2m debt - The Australian",
+     "Construction workers struggle as smog chokes Pakistan’s Lahore - The Australian",
+     "Why Bondi hero did not shoot at gunman after disarming him - The Australian"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "nationalreview",
+  "domain": "nationalreview.com",
+  "chosen": [
+   "https://www.nationalreview.com/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.nationalreview.com/wp-content/themes/national-review/static/images/favicons/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.nationalreview.com/news/feed/",
+    "ok": false,
+    "status": 200,
+    "ua": "browser",
+    "items": 20,
+    "newest_hours": 49.2,
+    "dated": 20,
+    "language": "en-US",
+    "title": "News | National Review",
+    "sample": [
+     "Trump Taps Stephen Miller as Chief of Staff in Post-Midterm Shake-Up",
+     "‘Elections Matter’: Houston Mayor Cuts Off Cooperation with ICE in Response to Texas Midterm Landslide",
+     "Justice Department Pursuing Criminal Investigation into <i>Dobbs</i> Decision Leak"
+    ],
+    "error": "20 items, newest 49.2 h"
+   },
+   {
+    "url": "https://www.nationalreview.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 9.0,
+    "dated": 20,
+    "language": "en-US",
+    "title": "National Review",
+    "sample": [
+     "Newsrooms Made a Dumb Bet on Gambling Partnerships",
+     "We’re Using Ideological Labels All Wrong",
+     "It’s All Elon’s Fault"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "propublica",
+  "domain": "propublica.org",
+  "chosen": [
+   "https://www.propublica.org/feeds/propublica/main",
+   "https://feeds.propublica.org/propublica/main"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.propublica.org/wp-content/uploads/2026/07/Frame-2.png?w=180",
+  "tries": [
+   {
+    "url": "https://www.propublica.org/feeds/propublica/main",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 10.5,
+    "dated": 20,
+    "language": "en-US",
+    "title": "ProPublica",
+    "sample": [
+     "An 11-Day-Old Baby Couldn’t Stop Bleeding. For Hours, the ER Didn’t Provide a Critical Vitamin Shot.",
+     "Texas’ School Voucher Program Could Be “Unrecognizable, If Not Extinct,” Says Democratic Lawmaker",
+     "On the Ground in the Final Days Before Trump’s Midterm Debacle"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://feeds.propublica.org/propublica/main",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 20,
+    "newest_hours": 10.5,
+    "dated": 20,
+    "language": "en-US",
+    "title": "ProPublica",
+    "sample": [
+     "An 11-Day-Old Baby Couldn’t Stop Bleeding. For Hours, the ER Didn’t Provide a Critical Vitamin Shot.",
+     "Texas’ School Voucher Program Could Be “Unrecognizable, If Not Extinct,” Says Democratic Lawmaker",
+     "On the Ground in the Final Days Before Trump’s Midterm Debacle"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "motherjones",
+  "domain": "motherjones.com",
+  "chosen": [
+   "https://www.motherjones.com/feed/",
+   "https://www.motherjones.com/politics/feed/"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.motherjones.com/wp-content/uploads/2017/09/cropped-favicon-512x512.png?w=180",
+  "tries": [
+   {
+    "url": "https://www.motherjones.com/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 2.5,
+    "dated": 10,
+    "language": "en-US",
+    "title": "Mother Jones",
+    "sample": [
+     "Trump Enters the Anger Stage Over GOP’s Catastrophic Losses",
+     "The American Dream Is No Match for Climate Change",
+     "Trump Just Offered the Press Secretary Gig to UFC’s Dana White"
+    ],
+    "error": null
+   },
+   {
+    "url": "https://www.motherjones.com/politics/feed/",
+    "ok": true,
+    "status": 200,
+    "ua": "bot",
+    "items": 10,
+    "newest_hours": 2.5,
+    "dated": 10,
+    "language": "en-US",
+    "title": "Politics – Mother Jones",
+    "sample": [
+     "Trump Enters the Anger Stage Over GOP’s Catastrophic Losses",
+     "The American Dream Is No Match for Climate Change",
+     "Trump Just Offered the Press Secretary Gig to UFC’s Dana White"
+    ],
+    "error": null
+   }
+  ]
+ },
+ {
+  "id": "cbc",
+  "domain": "cbc.ca",
+  "chosen": [
+   "https://www.cbc.ca/webfeed/rss/rss-topstories",
+   "https://www.cbc.ca/webfeed/rss/rss-world"
+  ],
+  "via_google_news": false,
+  "icon": "https://www.cbc.ca/a/apple-touch-icon.png",
+  "tries": [
+   {
+    "url": "https://www.cbc.ca/webfeed/rss/rss-topstories",
+    "ok": true,
+    "status": 200,
+    "error": null,
+    "ua": "browser",
+    "items": 20,
+    "newest_hours": 0.7,
+    "dated": 20,
+    "language": null,
+    "title": "CBC | Top Stories News",
+    "sample": [
+     "Republicans took big hits in the U.S. midterms. Does that mean Trump's political era is over?",
+     "Weather challenges search for Vancouver Island man who failed to return from canoe trip",
+     "University libraries are being swarmed by AI bots, putting public access at risk"
+    ]
+   },
+   {
+    "url": "https://www.cbc.ca/webfeed/rss/rss-world",
+    "ok": true,
+    "status": 200,
+    "error": null,
+    "ua": "browser",
+    "items": 20,
+    "newest_hours": 0.7,
+    "dated": 20,
+    "language": null,
+    "title": "CBC | World News",
+    "sample": [
+     "As Europe prepares for the worst, Britons get schooled in preparedness",
+     "At least 7 killed, more than 100 injured after trains collide in Egypt",
+     "Poland in mourning after deadly mass shooting in Krakow"
+    ]
+   }
+  ]
+ }
+]
