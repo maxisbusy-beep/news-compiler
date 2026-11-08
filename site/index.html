@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>News Compiler</title>
+  <style>
+    :root { --bg: #f7f6f2; --ink: #1c1c1a; --muted: #6b6a64; --accent: #2f6fde; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #151514; --ink: #ecebe6; --muted: #9d9c95; --accent: #7aa7ff; }
+    }
+    html, body { margin: 0; background: var(--bg); color: var(--ink); }
+    body {
+      font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100dvh; display: grid; place-items: center; padding: 0 16px;
+    }
+    main { max-width: 420px; text-align: center; }
+    h1 { font-size: 28px; margin: 0 0 8px; }
+    p { color: var(--muted); margin: 0; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+           background: var(--accent); margin-right: 8px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1><span class="dot"></span>News Compiler</h1>
+    <p>Phase 1 skeleton is live. Stories arrive in a later phase.</p>
+  </main>
+</body>
+</html>
