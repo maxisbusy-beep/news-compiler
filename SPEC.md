@@ -253,7 +253,7 @@ site/
 
 ### Phase 8: Automation
 - **Scope:**
-  - Schedule `*/30 * * * *`.
+  - Schedule `7,37 * * * *`: every 30 minutes, off the top of the hour, when GitHub delays or drops scheduled runs.
   - PWA (manifest plus a service worker that caches the shell and the last `stories.json`).
   - A hidden `#/health` page reading `health.json`.
   - A monthly keepalive step that commits a timestamp file, so GitHub doesn't disable the schedule after 60 idle days.
