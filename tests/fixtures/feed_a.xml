@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Outlet A</title>
+  <item>
+    <title>Parliament passes &lt;b&gt;budget&lt;/b&gt; after long debate</title>
+    <link>https://www.outlet-a.example/politics/budget-passes/?utm_source=rss&amp;utm_medium=feed</link>
+    <description>&lt;p&gt;Lawmakers approved the budget late on Friday.&lt;/p&gt;</description>
+    <pubDate>Sun, 08 Nov 2026 10:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Parliament passes budget after a long debate</title>
+    <link>https://www.outlet-a.example/live/budget-vote</link>
+    <description>Live coverage.</description>
+    <pubDate>Sun, 08 Nov 2026 10:05:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Storm closes coastal roads</title>
+    <link>https://www.outlet-a.example/weather/storm/</link>
+    <description>Roads shut along the coast.</description>
+    <pubDate>Sun, 08 Nov 2026 09:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Old story from three days ago</title>
+    <link>https://www.outlet-a.example/old</link>
+    <pubDate>Thu, 05 Nov 2026 09:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title>Story stamped in the future</title>
+    <link>https://www.outlet-a.example/future</link>
+    <pubDate>Sun, 08 Nov 2026 14:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>"site:wire.example" - Google News</title>
+  <item>
+    <title>Parliament passes budget after long debate - Wire News</title>
+    <link>https://news.google.com/rss/articles/CBMiAAA?oc=5</link>
+    <pubDate>Sun, 08 Nov 2026 10:10:00 GMT</pubDate>
+    <source url="https://wire.example">Wire News</source>
+  </item>
+  <item>
+    <title>Talks resume - in Geneva - Wire News</title>
+    <link>https://news.google.com/rss/articles/CBMiBBB?oc=5</link>
+    <pubDate>Sun, 08 Nov 2026 09:30:00 GMT</pubDate>
+    <source url="https://wire.example">Wire News</source>
+  </item>
+</channel>
+</rss>

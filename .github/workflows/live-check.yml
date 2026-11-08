@@ -1,0 +1,46 @@
+name: live-check
+
+# Phase 3 gate: run fetch + dedupe twice back to back against live feeds,
+# carrying state between runs, and fail on any duplicate item.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pipeline
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      # Private working data (raw items incl. RSS descriptions, ETags) lives in
+      # the Actions cache, never in the public repo or on Pages.
+      - uses: actions/cache/restore@v4
+        with:
+          path: work
+          key: pipeline-work-${{ github.run_id }}
+          restore-keys: pipeline-work-
+
+      - name: Run 1
+        run: python -m pipeline.run --data-dir work
+      - run: cp work/raw.json run1-raw.json
+      - name: Run 2 (immediately after)
+        run: python -m pipeline.run --data-dir work
+      - name: Duplicate check
+        run: python -m pipeline.tools.check_dupes work run1-raw.json
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: work
+          key: pipeline-work-${{ github.run_id }}
