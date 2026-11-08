@@ -3,7 +3,7 @@ name: pipeline
 # Every 30 minutes: fetch, dedupe, translate, group, write headlines, publish.
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "7,37 * * * *"   # off the top of the hour, when GitHub delays or drops scheduled runs
   workflow_dispatch:
 
 permissions:
