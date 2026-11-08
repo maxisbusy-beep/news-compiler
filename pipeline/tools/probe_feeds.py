@@ -111,6 +111,11 @@ def to_png(data: bytes) -> bytes | None:
         img = img.convert("RGBA")
         if min(img.size) < 16:
             return None
+        # Reject blank icons (fully or nearly transparent).
+        alpha = img.getchannel("A")
+        visible = sum(1 for a in alpha.getdata() if a > 40)
+        if visible < 0.1 * img.size[0] * img.size[1]:
+            return None
         img.thumbnail((64, 64), Image.LANCZOS)
         out = io.BytesIO()
         img.save(out, "PNG")
