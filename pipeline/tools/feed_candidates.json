@@ -46,5 +46,7 @@
   {"id": "straitstimes", "domain": "straitstimes.com", "proposed": true, "feeds": ["https://www.straitstimes.com/news/world/rss.xml", "https://www.straitstimes.com/news/asia/rss.xml"]},
   {"id": "theaustralian", "domain": "theaustralian.com.au", "proposed": true, "feeds": ["https://www.theaustralian.com.au/feed", "https://www.theaustralian.com.au/nation/rss"]},
   {"id": "nationalreview", "domain": "nationalreview.com", "proposed": true, "feeds": ["https://www.nationalreview.com/news/feed/", "https://www.nationalreview.com/feed/"]},
+  {"id": "propublica", "domain": "propublica.org", "feeds": ["https://www.propublica.org/feeds/propublica/main", "https://feeds.propublica.org/propublica/main"]},
+  {"id": "motherjones", "domain": "motherjones.com", "feeds": ["https://www.motherjones.com/feed/", "https://www.motherjones.com/politics/feed/"]},
   {"id": "cbc", "domain": "cbc.ca", "proposed": true, "feeds": ["https://www.cbc.ca/webfeed/rss/rss-topstories", "https://www.cbc.ca/webfeed/rss/rss-world"]}
 ]
