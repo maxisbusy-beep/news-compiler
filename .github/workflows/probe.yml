@@ -1,0 +1,23 @@
+name: probe-feeds
+
+# Phase 2 helper: test candidate feeds and fetch outlet icons from GitHub's network.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install feedparser requests pillow
+      - run: python pipeline/tools/probe_feeds.py pipeline/tools/feed_candidates.json probe-out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe-out
+          path: probe-out
